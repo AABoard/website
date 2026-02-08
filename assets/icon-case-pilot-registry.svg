@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="cp-shell" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#4b78a8"/>
+      <stop offset="100%" stop-color="#2f5ea7"/>
+    </linearGradient>
+    <linearGradient id="cp-panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f9fd"/>
+      <stop offset="100%" stop-color="#dde6f2"/>
+    </linearGradient>
+    <linearGradient id="cp-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4d06f"/>
+      <stop offset="100%" stop-color="#d4a437"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 25c0-4 3-7 7-7h17l6 6h23c4 0 7 3 7 7v26c0 4-3 7-7 7H17c-4 0-7-3-7-7V25z" fill="url(#cp-shell)"/>
+  <path d="M10 33h60v-2c0-4-3-7-7-7H40l-6-6H17c-4 0-7 3-7 7v8z" fill="#628cbc" opacity=".6"/>
+  <rect x="19" y="30" width="42" height="28" rx="4" fill="url(#cp-panel)"/>
+  <rect x="19" y="30" width="42" height="4" rx="2" fill="url(#cp-gold)" opacity=".9"/>
+  <rect x="24" y="36" width="20" height="2.8" rx="1.4" fill="#7b8eaa"/>
+  <rect x="24" y="42" width="26" height="2.8" rx="1.4" fill="#7b8eaa"/>
+  <rect x="24" y="48" width="18" height="2.8" rx="1.4" fill="#7b8eaa"/>
+  <rect x="46" y="35" width="10" height="16" rx="2.2" fill="#d7e1ef"/>
+  <path d="M50.8 38.2v9.6M48 41h5.6M48 44.6h5.6" stroke="#355c8a" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="58" cy="23" r="4.5" fill="url(#cp-gold)"/>
+  <path d="M56.8 23h2.4M58 21.8v2.4" stroke="#fff7df" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M19 58h42" stroke="#254c7f" stroke-opacity=".25"/>
+</svg>

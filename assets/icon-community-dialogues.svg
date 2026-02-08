@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="cd-bubble-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b78a8"/>
+      <stop offset="100%" stop-color="#2f5ea7"/>
+    </linearGradient>
+    <linearGradient id="cd-bubble-sub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e7eef8"/>
+      <stop offset="100%" stop-color="#d2deee"/>
+    </linearGradient>
+    <linearGradient id="cd-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4d06f"/>
+      <stop offset="100%" stop-color="#d4a437"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 25c0-5 4-9 9-9h23c5 0 9 4 9 9v12c0 5-4 9-9 9h-8l-8 8 2-8h-9c-5 0-9-4-9-9V25z" fill="url(#cd-bubble-main)"/>
+  <path d="M31 37c0-5 4-9 9-9h21c5 0 9 4 9 9v11c0 5-4 9-9 9h-8l-7 7 2-7h-8c-5 0-9-4-9-9V37z" fill="url(#cd-bubble-sub)"/>
+  <path d="M31 37h39c0-5-4-9-9-9H40c-5 0-9 4-9 9z" fill="url(#cd-gold)" opacity=".55"/>
+  <circle cx="24" cy="31" r="2.4" fill="#e6eef9"/>
+  <circle cx="31" cy="31" r="2.4" fill="#e6eef9"/>
+  <circle cx="38" cy="31" r="2.4" fill="#e6eef9"/>
+  <circle cx="45" cy="43" r="2.4" fill="#355c8a"/>
+  <circle cx="52" cy="43" r="2.4" fill="#355c8a"/>
+  <circle cx="59" cy="43" r="2.4" fill="#355c8a"/>
+  <path d="M57 20h8M61 16v8" stroke="#b78624" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="61" cy="20" r="8" fill="none" stroke="url(#cd-gold)" stroke-opacity=".75"/>
+</svg>

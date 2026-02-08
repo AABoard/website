@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Standard development icon">
+  <g fill="none" stroke="#1f4f94" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 30l66 24v44c0 48-27 88-66 108-39-20-66-60-66-108V54l66-24z" stroke-width="10"/>
+    <path d="M88 124l24 24 56-56" stroke-width="12"/>
+    <circle cx="188" cy="174" r="24" stroke-width="8"/>
+    <path d="M176 174l8 8 16-16" stroke-width="8"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Pattern analysis icon">
+  <g fill="none" stroke="#1f4f94" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 66l54 34M106 100l52-22M106 100l46 58M152 158l52-22M52 66l0 88M52 154l54-54M158 78l46 58"/>
+    <circle cx="52" cy="66" r="12" fill="#1f4f94"/>
+    <circle cx="52" cy="154" r="12" fill="#1f4f94"/>
+    <circle cx="106" cy="100" r="14" fill="#1f4f94"/>
+    <circle cx="158" cy="78" r="12" fill="#1f4f94"/>
+    <circle cx="152" cy="158" r="14" fill="#1f4f94"/>
+    <circle cx="204" cy="136" r="12" fill="#1f4f94"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Evidence collection icon">
+  <defs>
+    <linearGradient id="folderTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6c35b"/>
+      <stop offset="1" stop-color="#d8962e"/>
+    </linearGradient>
+    <linearGradient id="folderFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8cd6f"/>
+      <stop offset="1" stop-color="#e5a53e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1f2d46" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path d="M30 98c0-8 6-14 14-14h56l12-22c2-4 6-6 10-6h34c6 0 10 4 10 10v18h44c8 0 14 6 14 14v12H30V98z" fill="url(#folderTop)"/>
+    <rect x="26" y="104" width="204" height="112" rx="14" fill="url(#folderFront)"/>
+    <path d="M26 126h204v14H26z" fill="#ffffff" opacity=".22"/>
+  </g>
+
+  <g transform="translate(112 78) rotate(-8)">
+    <rect x="0" y="0" width="84" height="100" rx="8" fill="#fff"/>
+    <path d="M18 22h48M18 36h48M18 50h38M18 64h42" stroke="#c7d4ea" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="64" cy="78" r="10" fill="#4f76b8"/>
+    <path d="M70 84l12 12" stroke="#4f76b8" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(84 84) rotate(6)">
+    <rect x="0" y="0" width="72" height="90" rx="8" fill="#eef4ff"/>
+    <path d="M14 20h42M14 32h42M14 44h34" stroke="#b8c9e6" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#2f5ea7">
+    <circle cx="48" cy="74" r="4"/>
+    <circle cx="62" cy="64" r="3"/>
+    <circle cx="76" cy="72" r="3"/>
+  </g>
+</svg>
