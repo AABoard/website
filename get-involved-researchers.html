@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get Involved - Researchers | AI Assessment Board</title>
+  <meta name="description" content="How researchers can get involved with the AI Assessment Board." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/AAB transparent.png" alt="AI Assessment Board logo" />
+        <span class="brand-text">AI Assessment Board (AAB)</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#case-registry">Case Registry</a>
+        <a href="index.html#pilot-registry">Pilot Registry</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Get Involved - Researchers</h1>
+        <p class="lead lead-dark">
+          Contribute to and utilize AAB's growing body of AI education research.
+        </p>
+        
+        <h2>Why Work with AAB?</h2>
+        <p>
+          AAB provides researchers with access to structured, de-identified documentation of real-world
+          AI education practices. Our case and pilot registries offer citable evidence for studying
+          design patterns, adoption contexts, and emerging standards—without functioning as a
+          human-subjects research dataset.
+        </p>
+
+        <h2>Research Opportunities</h2>
+        <ul class="list">
+          <li>Access structured case documentation for literature reviews and meta-analysis</li>
+          <li>Submit your own research findings as case studies to the registry</li>
+          <li>Collaborate on research briefs analyzing trends across cases</li>
+          <li>Contribute methodological expertise to pilot design and evidence collection</li>
+          <li>Participate in cross-sector research dialogues with practitioners and policymakers</li>
+        </ul>
+
+        <h2>Using AAB Data</h2>
+        <p>
+          Researchers can cite case and pilot entries from the AAB registry in academic publications.
+          Each entry includes:
+        </p>
+        <ul class="list">
+          <li>Standardized metadata for filtering and comparison</li>
+          <li>De-identified implementation details</li>
+          <li>Evidence type and outcomes data where available</li>
+          <li>Replicability assets (playbooks, rubrics, templates)</li>
+        </ul>
+
+        <h2>Contributing Research</h2>
+        <p>
+          Have completed research in AI education? AAB can help document and share your findings
+          in our public registry, increasing visibility and impact.
+        </p>
+
+        <h2>Get Started</h2>
+        <p>
+          Interested in collaborating with AAB on research initiatives?
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="index.html#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> AI Assessment Board. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+</body>
+</html>

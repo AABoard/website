@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get Involved - Practitioners | AI Assessment Board</title>
+  <meta name="description" content="How practitioners can get involved with the AI Assessment Board." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/AAB transparent.png" alt="AI Assessment Board logo" />
+        <span class="brand-text">AI Assessment Board (AAB)</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#case-registry">Case Registry</a>
+        <a href="index.html#pilot-registry">Pilot Registry</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Get Involved - Practitioners</h1>
+        <p class="lead lead-dark">
+          Share your AI education experience and learn from the work of others.
+        </p>
+        
+        <h2>Why Share Your Work?</h2>
+        <p>
+          As an educator, instructional designer, or education technology specialist, your hands-on
+          experience with AI tools shapes the future of teaching and learning. AAB provides a platform
+          to document and share your work in a structured, public-interest format.
+        </p>
+
+        <h2>How Practitioners Can Contribute</h2>
+        <ul class="list">
+          <li>Submit case studies from your classroom or training programs</li>
+          <li>Share implementation details, challenges, and outcomes</li>
+          <li>Contribute replicability assets (lesson plans, rubrics, templates)</li>
+          <li>Participate in community dialogues with fellow practitioners</li>
+          <li>Provide feedback on draft research briefs and frameworks</li>
+        </ul>
+
+        <h2>Benefits for Practitioners</h2>
+        <p>
+          By contributing to AAB, practitioners gain:
+        </p>
+        <ul class="list">
+          <li>Recognition for your work in a public, citable registry</li>
+          <li>Access to documented practices from peers across contexts</li>
+          <li>Connection to a growing community of AI education practitioners</li>
+          <li>Opportunities to shape emerging best practices and standards</li>
+          <li>Support in documenting and reflecting on your implementation</li>
+        </ul>
+
+        <h2>What We Document</h2>
+        <p>
+          Case submissions are documented with your input and review, covering:
+        </p>
+        <ul class="list">
+          <li>Education level, subject area, and use case type</li>
+          <li>AI tools and implementation model</li>
+          <li>Governance and safety considerations</li>
+          <li>Evidence collected and observed outcomes</li>
+          <li>Constraints, risks, and lessons learned</li>
+        </ul>
+
+        <h2>Get Started</h2>
+        <p>
+          Ready to share your AI education work with the community?
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="index.html#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> AI Assessment Board. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+</body>
+</html>

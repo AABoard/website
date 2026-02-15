@@ -22,6 +22,17 @@
         <a href="#about">About</a>
         <a href="#case-registry">Case Registry</a>
         <a href="#pilot-registry">Pilot Registry</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Get Involved
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="get-involved-governments.html">For Governments &amp; Institutions</a>
+            <a href="get-involved-researchers.html">For Researchers</a>
+            <a href="get-involved-practitioners.html">For Practitioners</a>
+          </div>
+        </div>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -392,6 +403,25 @@
       const open = nav.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", String(open));
     });
+
+    // Dropdown toggle
+    const dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+    const dropdown = document.querySelector(".nav-dropdown");
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const open = dropdown.classList.toggle("nav-dropdown-open");
+        dropdownToggle.setAttribute("aria-expanded", String(open));
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("nav-dropdown-open");
+          dropdownToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
   </script>
 </body>
 </html>
