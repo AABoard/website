@@ -1,99 +1,298 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Get Involved - Governments & Institutions | AI Assessment Board</title>
-  <meta name="description" content="How governments and institutions can get involved with the AI Assessment Board." />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Governments & Institutions | AI Assessment Board (AAB)</title>
+  <meta name="description" content="AAB supports transparency and public confidence by preserving structured evidence of real-world AI education practices—without endorsements or market entry." />
+  <style>
+:root {
+  --deep-blue: #1F4E79;
+  --blue: #2E75B6;
+  --gold: #C69214;
+  --light-gold: #F2B705;
+  --gray: #6B7280;
+  --bg: #ffffff;
+  --card: #f7f9fb;
+  --border: #e6edf3;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: #0f172a;
+  background: var(--bg);
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header {
+  padding: 40px 20px 18px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.kicker {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.pill {
+  font-size: 12px;
+  letter-spacing: .02em;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--gray);
+}
+h1 {
+  margin: 0;
+  font-size: 34px;
+  color: var(--deep-blue);
+  line-height: 1.15;
+}
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--gray);
+  max-width: 70ch;
+}
+nav.breadcrumb {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gray);
+}
+main {
+  padding: 26px 20px 60px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+.card {
+  grid-column: span 12;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+@media (min-width: 820px) {
+  .card.span-6 { grid-column: span 6; }
+  .card.span-4 { grid-column: span 4; }
+}
+h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: var(--deep-blue);
+}
+h3 {
+  margin: 18px 0 8px;
+  font-size: 16px;
+  color: #111827;
+}
+ul { margin: 8px 0 0 18px; }
+li { margin: 6px 0; }
+.note {
+  border-left: 4px solid var(--light-gold);
+  padding: 10px 12px;
+  background: #fffaf0;
+  border-radius: 10px;
+  color: #1f2937;
+  margin-top: 12px;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--deep-blue);
+  font-weight: 600;
+}
+.button.primary {
+  background: var(--deep-blue);
+  color: #ffffff;
+  border-color: var(--deep-blue);
+}
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--gray);
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  color: var(--gray);
+  font-size: 13px;
+}
+.small {
+  font-size: 13px;
+  color: var(--gray);
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 820px) {
+  .two-col { grid-template-columns: 1fr 1fr; }
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/AAB transparent.png" alt="AI Assessment Board logo" />
-        <span class="brand-text">AI Assessment Board (AAB)</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html#about">About</a>
-        <a href="index.html#case-registry">Case Registry</a>
-        <a href="index.html#pilot-registry">Pilot Registry</a>
-        <a href="index.html#contact">Contact</a>
+  <header>
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/index.html">Home</a> &nbsp;›&nbsp;
+        <a href="/get-involved.html">Get Involved</a> &nbsp;›&nbsp;
+        <span>Governments & Institutions</span>
       </nav>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        ☰
-      </button>
+      <div style="display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap;">
+        <div>
+          <h1>For Governments & Institutions</h1>
+          <p class="subtitle">AAB supports transparency and public confidence by preserving structured evidence of real-world AI education practices—without endorsements or market entry.</p>
+          <div class="kicker" aria-label="AAB attributes">
+            <span class="pill">Independent</span>
+            <span class="pill">Non-profit</span>
+            <span class="pill">Evidence-based</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge">Governments & Institutions</span>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1>Get Involved - Governments &amp; Institutions</h1>
-        <p class="lead lead-dark">
-          Partner with AAB to document and share AI education practices at scale.
-        </p>
-        
-        <h2>Why Partner with AAB?</h2>
-        <p>
-          Governments, school districts, universities, and educational institutions play a crucial role
-          in shaping AI education policy and practice. AAB provides a neutral, public-interest platform
-          to document real-world implementations, share learnings, and contribute to emerging standards.
-        </p>
+    <div class="container">
+      
+<div class="grid">
+  <section class="card span-6">
+    <h2>Why this matters</h2>
+    <ul>
+      <li>AI literacy initiatives are expanding rapidly, but public confidence depends on transparent evidence.</li>
+      <li>Without structured documentation, schools and governments often face competing narratives rather than comparable records.</li>
+      <li>AAB addresses the governance gap through neutral documentation and long-term preservation.</li>
+    </ul>
+    <div class="note"><strong>Key point:</strong> The challenge is not access. The challenge is public judgment and trust.</div>
+  </section>
 
-        <h2>How Institutions Can Contribute</h2>
-        <ul class="list">
-          <li>Submit case studies from your AI education initiatives</li>
-          <li>Participate in structured pilot programs with documentation support</li>
-          <li>Share de-identified implementation data to inform best practices</li>
-          <li>Collaborate on research briefs and evidence collection</li>
-          <li>Join community dialogues with peers across sectors</li>
+  <section class="card span-6">
+    <h2>What AAB is (and is not)</h2>
+    <div class="two-col">
+      <div>
+        <h3>AAB is</h3>
+        <ul>
+          <li>Independent, non-profit documentation body</li>
+          <li>Public evidence preservation initiative</li>
+          <li>Neutral framework provider</li>
+          <li>Structured case and pilot registry</li>
         </ul>
-
-        <h2>Partnership Benefits</h2>
-        <p>
-          By partnering with AAB, institutions gain access to:
-        </p>
-        <ul class="list">
-          <li>Independent documentation and analysis of your AI education work</li>
-          <li>Cross-sector insights from the case and pilot registries</li>
-          <li>Recognition in the public registry with proper attribution</li>
-          <li>Participation in shaping emerging assessment frameworks</li>
-          <li>Connection to a growing network of education AI practitioners</li>
-        </ul>
-
-        <h2>Get Started</h2>
-        <p>
-          Interested in partnering with AAB? We'd love to hear from you.
-        </p>
-        <div class="cta-actions">
-          <a class="btn btn-primary" href="index.html#contact">Contact Us</a>
-        </div>
       </div>
-    </section>
+      <div>
+        <h3>AAB is not</h3>
+        <ul>
+          <li>A curriculum vendor</li>
+          <li>A product certification authority</li>
+          <li>A vendor endorsement body</li>
+          <li>A ranking organization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How AAB supports governments and institutions</h2>
+    <div class="two-col">
+      <div>
+        <h3>What institutions often need</h3>
+        <ul>
+          <li>Transparent evaluation mechanisms</li>
+          <li>Third-party documentation</li>
+          <li>Publicly accessible learning records</li>
+          <li>Evidence before endorsement</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What AAB provides</h3>
+        <ul>
+          <li>Neutral documentation frameworks</li>
+          <li>Open submission architecture (with verification)</li>
+          <li>Structured comparative formats</li>
+          <li>Long-term record preservation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card span-6">
+    <h2>How to engage</h2>
+    <ul>
+      <li>Adopt AAB documentation templates for pilots (district, library, after-school, higher-ed).</li>
+      <li>Contribute structured case/pilot records to the public registry.</li>
+      <li>Support international comparative learning through shared formats.</li>
+      <li>Join governance dialogue: transparency standards and documentation best practices.</li>
+    </ul>
+    <div class="note"><strong>Participation does not imply endorsement.</strong> It builds transparency.</div>
+  </section>
+
+  <section class="card span-6">
+    <h2>Safeguards & neutrality</h2>
+    <ul>
+      <li>Structural independence from commercial entities</li>
+      <li>Clear separation from implementation decisions</li>
+      <li>No recommendations or vendor endorsement authority</li>
+      <li>Public, documented processes</li>
+    </ul>
+    <div class="note">Our credibility depends on restraint.</div>
+  </section>
+
+  <section class="card">
+    <h2>Next steps</h2>
+    <div class="cta">
+      <a class="button primary" href="/contact.html">Contact AAB</a>
+      <a class="button" href="/case-registry.html">Explore Case Registry</a>
+      <a class="button" href="/pilot-registry.html">Explore Pilot Registry</a>
+      <a class="button" href="/resources.html">Download PDFs & templates</a>
+    </div>
+    <p class="small" style="margin-top:10px;">
+      Suggested placement: <strong>Get Involved → For Governments & Institutions</strong>
+    </p>
+  </section>
+</div>
+
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> AI Assessment Board. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-use.html">Terms of Use</a>
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div>© <span id="y"></span> AI Assessment Board (AAB) • Visit <a href="https://aaboard.org">aaboard.org</a></div>
+        <div class="small">AAB documents practices and preserves structured evidence for public reference. Participation does not imply endorsement.</div>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("nav-open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
