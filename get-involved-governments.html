@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get Involved - Governments & Institutions | AI Assessment Board</title>
+  <meta name="description" content="How governments and institutions can get involved with the AI Assessment Board." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/AAB transparent.png" alt="AI Assessment Board logo" />
+        <span class="brand-text">AI Assessment Board (AAB)</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#case-registry">Case Registry</a>
+        <a href="index.html#pilot-registry">Pilot Registry</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Get Involved - Governments &amp; Institutions</h1>
+        <p class="lead lead-dark">
+          Partner with AAB to document and share AI education practices at scale.
+        </p>
+        
+        <h2>Why Partner with AAB?</h2>
+        <p>
+          Governments, school districts, universities, and educational institutions play a crucial role
+          in shaping AI education policy and practice. AAB provides a neutral, public-interest platform
+          to document real-world implementations, share learnings, and contribute to emerging standards.
+        </p>
+
+        <h2>How Institutions Can Contribute</h2>
+        <ul class="list">
+          <li>Submit case studies from your AI education initiatives</li>
+          <li>Participate in structured pilot programs with documentation support</li>
+          <li>Share de-identified implementation data to inform best practices</li>
+          <li>Collaborate on research briefs and evidence collection</li>
+          <li>Join community dialogues with peers across sectors</li>
+        </ul>
+
+        <h2>Partnership Benefits</h2>
+        <p>
+          By partnering with AAB, institutions gain access to:
+        </p>
+        <ul class="list">
+          <li>Independent documentation and analysis of your AI education work</li>
+          <li>Cross-sector insights from the case and pilot registries</li>
+          <li>Recognition in the public registry with proper attribution</li>
+          <li>Participation in shaping emerging assessment frameworks</li>
+          <li>Connection to a growing network of education AI practitioners</li>
+        </ul>
+
+        <h2>Get Started</h2>
+        <p>
+          Interested in partnering with AAB? We'd love to hear from you.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="index.html#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> AI Assessment Board. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+</body>
+</html>
