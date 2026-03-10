@@ -4,3 +4,5 @@ The International AI Assessment Board (AAB) is a nonprofit initiative dedicated 
 AAB maintains an open AI education case registry and pilot registry to document real-world AI learning programs and support evidence-based AI education research.
 
 Our work is independent, transparent, and public-interest driven.
+
+Visit [https://aaboard.org](https://aaboard.org)
