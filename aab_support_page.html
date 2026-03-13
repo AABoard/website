@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support AAB | International AI Assessment Board</title>
+  <meta name="description" content="Sign the Letter of Support for the International AI Assessment Board (AAB) and express interest in the Academic Advisory Board." />
+
+  <style>
+    :root{
+      --blue:#1f4e79;
+      --blue-soft:#eef4fb;
+      --blue-accent:#2e75b6;
+      --text:#1f2937;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --surface:#f8fafc;
+      --maxw:1120px;
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{
+      color:var(--blue-accent);
+      text-decoration:none;
+    }
+
+    a:hover{text-decoration:underline}
+
+    .container{
+      width:min(var(--maxw), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    /* HEADER */
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:white;
+      border-bottom:1px solid var(--line);
+    }
+
+    .site-header .container{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:64px;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    .brand{
+      font-weight:700;
+      color:var(--blue);
+    }
+
+    .nav{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:var(--text);
+      font-size:0.95rem;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:70px 0 60px;
+      background:var(--blue-soft);
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero h1{
+      margin:0 0 16px;
+      font-size:clamp(2rem,4vw,3rem);
+      color:var(--blue);
+    }
+
+    .hero p{
+      margin:0 0 16px;
+      max-width:820px;
+      color:var(--muted);
+    }
+
+    .hero-actions{
+      margin-top:22px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:10px 18px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:white;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--blue);
+      color:white;
+      border:none;
+    }
+
+    .btn-primary:hover{
+      background:var(--blue-accent);
+    }
+
+    section{
+      padding:60px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    h2{
+      margin:0 0 12px;
+      color:var(--blue);
+      font-size:1.9rem;
+    }
+
+    h3{
+      margin:0 0 10px;
+      color:var(--blue);
+      font-size:1.15rem;
+    }
+
+    .intro{
+      max-width:800px;
+      margin-bottom:28px;
+      color:var(--muted);
+    }
+
+    /* GRID */
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1.2fr 0.9fr;
+      gap:28px;
+    }
+
+    /* CARDS */
+
+    .card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+
+    .highlight-box{
+      background:var(--blue-soft);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+
+    .quote{
+      font-weight:600;
+      color:var(--blue);
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    ul li{margin:10px 0}
+
+    /* ORG STRUCTURE */
+
+    .org-chart{
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius);
+      padding:24px;
+      font-family:"Courier New", monospace;
+      white-space:pre;
+      margin-bottom:26px;
+      color:var(--blue);
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .mini-card{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:18px;
+      background:white;
+    }
+
+    /* STEPS */
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .step{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:20px;
+      background:white;
+    }
+
+    .step-number{
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    /* FORM */
+
+    .form-wrap iframe{
+      width:100%;
+      min-height:900px;
+      border:0;
+      border-radius:10px;
+      background:white;
+    }
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    footer strong{color:var(--blue)}
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .grid-2,
+      .mini-grid,
+      .steps{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">AI Assessment Board (AAB)</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#structure">Structure</a>
+      <a href="#support">Letter of Support</a>
+      <a href="#sign">Sign</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+
+    <h1>Support the International AI Assessment Board (AAB)</h1>
+
+    <p>
+      AAB is a nonprofit initiative working to build the global evidence base for AI education through an open registry of
+      real‑world AI learning practices, research, and pilot implementations.
+    </p>
+
+    <p>
+      We invite scholars, educators, researchers, and institutional leaders to endorse the mission of AAB by signing the
+      Letter of Support. Supporters may also indicate interest in serving on the Academic Advisory Board.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#sign">Sign the Letter of Support</a>
+      <a class="btn" href="#structure">View AAB Structure</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container grid-2">
+
+    <div>
+      <h2>What is AAB?</h2>
+
+      <p class="intro">
+        The International AI Assessment Board (AAB) is a nonprofit initiative dedicated to advancing AI literacy and AI
+        education standards across K–12 education, adult learning, and workforce AI training.
+      </p>
+
+      <p>
+        AAB maintains an open AI education case registry and pilot registry to document real‑world AI learning programs and
+        support evidence‑based AI education research.
+      </p>
+
+      <p>
+        Our work is independent, transparent, and public‑interest driven.
+      </p>
+
+    </div>
+
+    <div class="highlight-box">
+
+      <h3>Invitation</h3>
+
+      <p>
+        We invite scholars and professionals to support the mission of AAB by signing the Letter of Support.
+      </p>
+
+      <p>
+        Signatories may also indicate whether they would be open to serving on the AAB Academic Advisory Board.
+      </p>
+
+      <p class="quote">AAB builds the global evidence infrastructure for AI education.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="structure">
+
+  <div class="container">
+
+    <h2>AAB Organizational Structure</h2>
+
+    <p class="intro">
+      AAB is designed as a lean organizing team supported by an international network of advisors, fellows,
+      contributors, and regional partners.
+    </p>
+
+    <div class="org-chart">International AI Assessment Board (AAB)
+
+Founder / Core Organizers
+        │
+Academic Advisory Board
+        │
+Research Fellows
+        │
+Contributors & Ambassadors
+        │
+Regional Liaisons
+        │
+Global AI Education Case Registry</div>
+
+    <div class="mini-grid">
+
+      <div class="mini-card">
+        <h3>Academic Advisory Board</h3>
+        <p>Provides strategic academic guidance and visibility for the initiative.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Research Fellows</h3>
+        <p>Supports literature review, case analysis, and research output.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Contributors & Ambassadors</h3>
+        <p>Help submit cases, share resources, and expand the global network.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Regional Liaisons</h3>
+        <p>Collect practice‑based cases and connect AAB with local ecosystems.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container grid-2">
+
+    <div class="card">
+
+      <h2>Case Automation Engine</h2>
+
+      <p>
+        AAB combines human collaboration with automation. Research‑based cases can be identified through an
+        AI‑assisted discovery workflow that searches relevant papers and converts them into structured case entries.
+      </p>
+
+      <ul>
+        <li>Automatically identifies relevant research papers</li>
+        <li>Extracts structured information into standardized case fields</li>
+        <li>Accelerates growth of the global case registry</li>
+        <li>Complements practice‑based submissions</li>
+      </ul>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Practice‑Based Case Collection</h3>
+
+      <p>
+        Regional liaisons and partner institutions also contribute real‑world AI education pilots including
+        school programs, community initiatives, and workforce training pilots.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="support">
+
+  <div class="container">
+
+    <h2>Letter of Support</h2>
+
+    <p class="intro">
+      Scholars and professionals are invited to sign the following statement.
+    </p>
+
+    <div class="highlight-box">
+
+      <p class="quote">
+        We support the mission of the International AI Assessment Board (AAB) to build an open global registry of AI
+        education practices and advance evidence‑based AI literacy standards.
+      </p>
+
+      <p>
+        Supporters may also indicate interest in serving on the Academic Advisory Board.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="sign">
+
+  <div class="container">
+
+    <h2>Sign the Letter of Support</h2>
+
+    <p class="intro">
+      Replace the link below with your published Google Form.
+    </p>
+
+    <div class="card form-wrap">
+
+      <iframe
+        src="https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform?embedded=true"
+        loading="lazy">
+      </iframe>
+
+      <p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform" target="_blank">
+          Open Form in New Tab
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="container">
+
+    <p><strong>International AI Assessment Board (AAB)</strong></p>
+
+    <p>Building the global evidence infrastructure for AI education.</p>
+
+    <p>
+      Contact: info@aaboard.org
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
