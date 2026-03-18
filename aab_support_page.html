@@ -272,8 +272,11 @@
 <body>
 
 <header class="site-header">
-  <div class="container">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img class="brand-mark" src="assets/AAB transparent.png"/>
         <span class="brand-text">AI Assessment Board (AAB)</span>
+      </a>
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#structure">Structure</a>
@@ -614,18 +617,27 @@ Regional Liaisons / Pilots</div>
 
 </footer>
 
+  
+  
+  
   <script>
     // ================================
     // AAB Supporters Auto-Display Setup
     // ================================
-    // 1. Connect your Google Form to a Google Sheet.
-    // 2. In Google Sheets: File -> Share -> Publish to web -> CSV.
-    // 3. Paste the published CSV link below.
-    // 4. Expected sheet columns:
-    //    Name | Title | Institution | Country | PublicDisplay | SupportAAB | AdvisoryInterest
-    // 5. Use TRUE / Yes in PublicDisplay to show a row publicly.
+    // This version is aligned to the actual Google Form response headers:
+    // Timestamp
+    // Name
+    // Title / Position
+    // Institution / Organization
+    // Country
+    // Email
+    // I support the mission of the International AI Assessment Board (AAB) and endorse the Letter of Support.
+    // I agree that my name, title, and institution may be displayed publicly on the AAB website as a supporter.
+    // I would be open to serving as a member of the AAB Academic Advisory Board.
+    // I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board.
+    // Do you have any other comments?
 
-    const SUPPORTERS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_Ui0cEDBpzamH4rAmlHZ9b6XPM_jO5IEmMv2dJURGmUoFNx6u0TNVtftkj90Vdw/pub?output=csv";
+    const SUPPORTERS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7zj1RrzepWUNX95kgEo2eO5no8FzZgZxFH0oAbmFTf1dau7ok_i0efZTyccLE3_GzVpoh8a2pm1iu/pub?output=csv";
 
     function parseCSVRow(row) {
       const result = [];
@@ -656,9 +668,7 @@ Regional Liaisons / Pilots</div>
     }
 
     function parseCSV(text) {
-      const rows = text.split(/
-?
-/).filter(Boolean);
+      const rows = text.split(/\r?\n/).filter(Boolean);
       if (!rows.length) return [];
 
       const headers = parseCSVRow(rows[0]);
@@ -672,43 +682,56 @@ Regional Liaisons / Pilots</div>
       });
     }
 
-    function truthy(value) {
-      return ["true", "yes", "y", "1"].includes(String(value || "").toLowerCase());
+    function normalize(text) {
+      return String(text || "")
+        .toLowerCase()
+        .replace(/[^\w\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function isYes(value) {
+      const v = normalize(value);
+      return ["yes", "y", "true", "1"].includes(v);
     }
 
     function renderSupporters(entries) {
       const list = document.getElementById("supporters-list");
       const status = document.getElementById("supporters-status");
 
-      const publicEntries = entries.filter(entry => {
-        const publicDisplay = entry.PublicDisplay || entry.publicdisplay || entry["Public Display"] || "";
-        const supportAAB = entry.SupportAAB || entry.supportaab || entry["Support AAB"] || "";
-        return truthy(publicDisplay) && truthy(supportAAB);
+      const mapped = entries.map(entry => ({
+        name: entry["Name"] || "",
+        title: entry["Title / Position"] || "",
+        institution: entry["Institution / Organization"] || "",
+        country: entry["Country"] || "",
+        email: entry["Email "] || entry["Email"] || "",
+        supportAAB: entry["I support the mission of the International AI Assessment Board (AAB) and endorse the Letter of Support."] || "",
+        supporterDisplayConsent: entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a supporter."] || "",
+        advisoryInterest: entry["I would be open to serving as a member of the AAB Academic Advisory Board."] || "",
+        advisoryDisplayConsent: entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board."] || "",
+        comments: entry["Do you have any other comments?"] || ""
+      }));
+
+      const publicEntries = mapped.filter(entry => {
+        return entry.name && isYes(entry.supportAAB) && isYes(entry.supporterDisplayConsent);
       });
 
       if (!publicEntries.length) {
-        status.textContent = "No public supporters are listed yet.";
+        status.textContent = "No public supporters are listed yet. Make sure supporters selected Yes for both the support statement and supporter display consent.";
         list.innerHTML = "";
         return;
       }
 
       status.textContent = `${publicEntries.length} supporter${publicEntries.length > 1 ? "s" : ""} listed.`;
 
-      list.innerHTML = publicEntries.map(entry => {
-        const name = entry.Name || entry.name || "";
-        const title = entry.Title || entry.title || "";
-        const institution = entry.Institution || entry.institution || entry["Institution / Organization"] || "";
-        const country = entry.Country || entry.country || "";
-
-        return `
-          <div class="mini-card">
-            <h3>${name || "Supporter"}</h3>
-            ${title ? `<p><strong>Title:</strong> ${title}</p>` : ""}
-            ${institution ? `<p><strong>Institution:</strong> ${institution}</p>` : ""}
-            ${country ? `<p><strong>Country:</strong> ${country}</p>` : ""}
-          </div>
-        `;
-      }).join("");
+      list.innerHTML = publicEntries.map(entry => `
+        <div class="mini-card">
+          <h3>${entry.name}</h3>
+          ${entry.title ? `<p><strong>Title:</strong> ${entry.title}</p>` : ""}
+          ${entry.institution ? `<p><strong>Institution:</strong> ${entry.institution}</p>` : ""}
+          ${entry.country ? `<p><strong>Country:</strong> ${entry.country}</p>` : ""}
+        </div>
+      `).join("");
     }
 
     async function loadSupporters() {
@@ -720,7 +743,7 @@ Regional Liaisons / Pilots</div>
       }
 
       try {
-        const response = await fetch(SUPPORTERS_CSV_URL);
+        const response = await fetch(SUPPORTERS_CSV_URL, { cache: "no-store" });
         if (!response.ok) throw new Error("Failed to fetch supporters data.");
         const csvText = await response.text();
         const entries = parseCSV(csvText);
@@ -733,5 +756,6 @@ Regional Liaisons / Pilots</div>
 
     loadSupporters();
   </script>
+
 </body>
 </html>
