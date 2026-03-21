@@ -265,6 +265,17 @@
 
     }
 
+    .brand{ display:flex; align-items:center; gap: 12px; font-weight: 700; color: var(--accent); }
+  .brand-mark{
+    width: 52px;
+    height: 52px;
+    display:block;
+    background: transparent;
+    border-radius: 0;
+    object-fit: contain;
+  }
+  .brand-text{ font-size: 0.98rem; color: var(--accent); }
+
   </style>
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
@@ -273,11 +284,13 @@
 
 <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/AAB transparent.png" alt="AI Assessment Board logo" />
         <span class="brand-text">AI Assessment Board (AAB)</span>
       </a>
     <nav class="nav">
       <a href="#about">About</a>
+      <a href="aab-launch-announcement.html">News</a>
       <a href="#structure">Structure</a>
       <a href="#support">Letter of Support</a>
       <a href="#sign">Sign</a>
@@ -312,10 +325,10 @@
   <div class="container grid-2">
 
     <div>
-      <h2>What is AAB?</h2>
+      <a href="index.html"><h2>What is AAB?</h2></a>
 
       <p class="intro">
-        The International AI Assessment Board (AAB) is a nonprofit initiative dedicated to advancing AI literacy and AI
+        The International AI Assessment Board <a href="index.html">AAB</a> is a nonprofit initiative dedicated to advancing AI literacy and AI
         education standards across K–12 education, adult learning, and workforce AI training.
       </p>
 
