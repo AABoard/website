@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support AAB | International AI Assessment Board</title>
   <meta name="description" content="Sign the Letter of Support for the International AI Assessment Board (AAB) and express interest in the Academic Advisory Board." />
-
+  <meta name="robots" content="noindex, nofollow">
   <style>
     :root{
       --blue:#1f4e79;
@@ -266,13 +266,16 @@
     }
 
   </style>
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <div class="brand">AI Assessment Board (AAB)</div>
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-text">AI Assessment Board (AAB)</span>
+      </a>
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#structure">Structure</a>
@@ -385,7 +388,7 @@ Global AI Education Case Registry</div>
 
       <div class="mini-card">
         <h3>Contributors & Ambassadors</h3>
-        <p>Help submit cases, share resources, and expand the global network.</p>
+        <p>Help submit cases, share resources, expand the global network, and contribute engineering or programming support for tools, data pipelines, and case registry infrastructure.</p>
       </div>
 
       <div class="mini-card">
@@ -405,30 +408,58 @@ Global AI Education Case Registry</div>
 
     <div class="card">
 
-      <h2>Case Automation Engine</h2>
+      <h2>Research-Based Case Collection</h2>
 
       <p>
-        AAB combines human collaboration with automation. Research‑based cases can be identified through an
-        AI‑assisted discovery workflow that searches relevant papers and converts them into structured case entries.
+        AAB collects AI education cases from published academic papers, research projects, and empirical studies.
+        These research-based cases provide documented evidence of how AI is being used in education across
+        different learning contexts.
+      </p>
+
+      <p>
+        Cases may originate from peer-reviewed journal articles, conference papers, institutional research
+        reports, funded research projects, and large-scale educational studies.
       </p>
 
       <ul>
-        <li>Automatically identifies relevant research papers</li>
-        <li>Extracts structured information into standardized case fields</li>
-        <li>Accelerates growth of the global case registry</li>
-        <li>Complements practice‑based submissions</li>
+        <li>Peer-reviewed journal papers</li>
+        <li>Conference research publications</li>
+        <li>Funded research projects</li>
+        <li>Institutional research studies</li>
+        <li>Published evaluation reports</li>
       </ul>
+
+      <p>
+        This research-based evidence complements practice-based cases collected through regional pilots
+        and institutional collaborations.
+      </p>
 
     </div>
 
     <div class="card">
 
-      <h3>Practice‑Based Case Collection</h3>
+      <h3>Practice-Based Case Collection</h3>
 
       <p>
-        Regional liaisons and partner institutions also contribute real‑world AI education pilots including
+        Regional liaisons and partner institutions also contribute real-world AI education pilots including
         school programs, community initiatives, and workforce training pilots.
       </p>
+
+      <div class="highlight-box" style="margin-top:18px;">
+        <h3>Case Sources Diagram</h3>
+        <div class="org-chart" style="margin:0; background:white;">Published Research
+        │
+        ▼
+Research-Based Case Collection
+        │
+        ▼
+Global AI Education Case Registry
+        ▲
+        │
+Practice-Based Case Collection
+        │
+Regional Liaisons / Pilots</div>
+      </div>
 
     </div>
 
@@ -463,6 +494,83 @@ Global AI Education Case Registry</div>
 
 </section>
 
+<section id="supporters">
+
+  <div class="container">
+
+    <h2>Founding Supporters</h2>
+
+    <div id="supporters-status" class="intro" style="margin-top:18px;">Loading supporters…</div>
+
+    <div id="supporters-list" class="mini-grid" aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<section id="advisory-template">
+
+  <div class="container">
+
+    <h2>Academic Advisory Board</h2>
+    <div class="card">
+      <h3>Role of the Academic Advisory Board</h3>
+      <p>
+        The Academic Advisory Board provides occasional strategic guidance, academic perspective, and external credibility for the development of AAB and its Global AI Education Case Registry.
+      </p>
+      <ul>
+        <li>Offer light-touch academic guidance on AAB mission and direction</li>
+        <li>Provide perspective on emerging AI education research and practice</li>
+        <li>Strengthen the visibility and credibility of the initiative</li>
+        <li>Support connections across institutions, disciplines, and regions</li>
+      </ul>
+    </div>
+
+    <div style="height:18px"></div>
+
+    <div class="highlight-box">
+      <h3>Founding Academic Advisors</h3>
+      <p class="intro" style="margin-bottom:0; max-width:none;">
+        Replace the sample entries below with your confirmed advisors.
+      </p>
+    </div>
+
+    <div style="height:18px"></div>
+
+    <div class="mini-grid">
+      <div class="mini-card">
+        <h3>Prof. Jane Smith</h3>
+        <p><strong>University:</strong> University of Southern California</p>
+        <p><strong>Field:</strong> Artificial Intelligence / Education</p>
+        <p><strong>Region:</strong> United States</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Prof. Michael Lee</h3>
+        <p><strong>University:</strong> National University of Singapore</p>
+        <p><strong>Field:</strong> Learning Sciences</p>
+        <p><strong>Region:</strong> Southeast Asia</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Prof. Ana Rodriguez</h3>
+        <p><strong>University:</strong> University of Barcelona</p>
+        <p><strong>Field:</strong> AI Policy / Society</p>
+        <p><strong>Region:</strong> Europe</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Prof. David Chen</h3>
+        <p><strong>University:</strong> University of Macau</p>
+        <p><strong>Field:</strong> Computer Science</p>
+        <p><strong>Region:</strong> Macao</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
 <section id="sign">
 
   <div class="container">
@@ -476,12 +584,12 @@ Global AI Education Case Registry</div>
     <div class="card form-wrap">
 
       <iframe
-        src="https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform?embedded=true"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeswEh20dG53BOUhrkc9TgDk4KtzfhcYCMftda7B3WzJtmu3A/viewform?embedded=true"
         loading="lazy">
       </iframe>
 
       <p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform" target="_blank">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeswEh20dG53BOUhrkc9TgDk4KtzfhcYCMftda7B3WzJtmu3A/viewform" target="_blank">
           Open Form in New Tab
         </a>
       </p>
@@ -507,6 +615,146 @@ Global AI Education Case Registry</div>
   </div>
 
 </footer>
+
+  
+  
+  
+  <script>
+    // ================================
+    // AAB Supporters Auto-Display Setup
+    // ================================
+    // This version is aligned to the actual Google Form response headers:
+    // Timestamp
+    // Name
+    // Title / Position
+    // Institution / Organization
+    // Country
+    // Email
+    // I support the mission of the International AI Assessment Board (AAB) and endorse the Letter of Support.
+    // I agree that my name, title, and institution may be displayed publicly on the AAB website as a supporter.
+    // I would be open to serving as a member of the AAB Academic Advisory Board.
+    // I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board.
+    // Do you have any other comments?
+
+    const SUPPORTERS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7zj1RrzepWUNX95kgEo2eO5no8FzZgZxFH0oAbmFTf1dau7ok_i0efZTyccLE3_GzVpoh8a2pm1iu/pub?output=csv";
+    const SUPPORTERS_CSV_URL = "./supporters.csv";
+    function parseCSVRow(row) {
+      const result = [];
+      let current = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < row.length; i++) {
+        const char = row[i];
+        const next = row[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            current += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = "";
+        } else {
+          current += char;
+        }
+      }
+
+      result.push(current.trim());
+      return result;
+    }
+
+    function parseCSV(text) {
+      const rows = text.split(/\r?\n/).filter(Boolean);
+      if (!rows.length) return [];
+
+      const headers = parseCSVRow(rows[0]);
+      return rows.slice(1).map(row => {
+        const values = parseCSVRow(row);
+        const entry = {};
+        headers.forEach((header, idx) => {
+          entry[header.trim()] = values[idx] ? values[idx].trim() : "";
+        });
+        return entry;
+      });
+    }
+
+    function normalize(text) {
+      return String(text || "")
+        .toLowerCase()
+        .replace(/[^\w\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function isYes(value) {
+      const v = normalize(value);
+      return ["yes", "y", "true", "1"].includes(v);
+    }
+
+    function renderSupporters(entries) {
+      const list = document.getElementById("supporters-list");
+      const status = document.getElementById("supporters-status");
+
+      const mapped = entries.map(entry => ({
+        name: entry["Name"] || "",
+        title: entry["Title / Position"] || "",
+        institution: entry["Institution / Organization"] || "",
+        country: entry["Country"] || "",
+        email: entry["Email "] || entry["Email"] || "",
+        supportAAB: entry["I support the mission of the International AI Assessment Board (AAB) and endorse the Letter of Support."] || "",
+        supporterDisplayConsent: entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a supporter."] || "",
+        advisoryInterest: entry["I would be open to serving as a member of the AAB Academic Advisory Board."] || "",
+        advisoryDisplayConsent: entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board."] || "",
+        comments: entry["Do you have any other comments?"] || ""
+      }));
+
+      const publicEntries = mapped.filter(entry => {
+        return entry.name && isYes(entry.supportAAB) && isYes(entry.supporterDisplayConsent);
+      });
+
+      if (!publicEntries.length) {
+        status.textContent = "No public supporters are listed yet. Make sure supporters selected Yes for both the support statement and supporter display consent.";
+        list.innerHTML = "";
+        return;
+      }
+
+      status.textContent = `${publicEntries.length} supporter${publicEntries.length > 1 ? "s" : ""} listed.`;
+
+      list.innerHTML = publicEntries.map(entry => `
+        <div class="mini-card">
+          <h3>${entry.name}</h3>
+          ${entry.title ? `<p><strong>Title:</strong> ${entry.title}</p>` : ""}
+          ${entry.institution ? `<p><strong>Institution:</strong> ${entry.institution}</p>` : ""}
+          ${entry.country ? `<p><strong>Country:</strong> ${entry.country}</p>` : ""}
+        </div>
+      `).join("");
+    }
+
+    async function loadSupporters() {
+      const status = document.getElementById("supporters-status");
+
+      if (!SUPPORTERS_CSV_URL || SUPPORTERS_CSV_URL.includes("REPLACE_WITH")) {
+        status.textContent = "Add your published Google Sheet CSV URL to enable the supporters list.";
+        return;
+      }
+
+      try {
+        const response = await fetch(SUPPORTERS_CSV_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("Failed to fetch supporters data.");
+        const csvText = await response.text();
+        const entries = parseCSV(csvText);
+        renderSupporters(entries);
+      } catch (error) {
+        status.textContent = "Unable to load supporters right now.";
+        console.error(error);
+      }
+    }
+
+    loadSupporters();
+  </script>
 
 </body>
 </html>

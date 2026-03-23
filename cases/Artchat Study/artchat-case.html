@@ -42,8 +42,6 @@
           <div class="kicker">
             <span class="badge"><strong>Case Type</strong> Case Report</span>
             <span class="badge"><strong>Status</strong> Completed</span>
-            <span class="badge"><strong>Author</strong> TBD</span>
-            <span class="badge"><strong>Editor</strong> Cao, Christopher</span>
           </div>
 
           <h2 class="caseId" id="caseId">AAB-CASE-2026-ED-XXX</h2>
@@ -83,6 +81,15 @@
       </div>
 
       <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <div class="tags" aria-label="AAB classification tags">
+        <span class="tag"><span class="k">Age</span>Higher Ed (19–23)</span>
+        <span class="tag"><span class="k">Setting</span>University</span>
+        <span class="tag"><span class="k">AI Function</span>RAG Chatbot / Conversational AI</span>
+        <span class="tag"><span class="k">Pedagogy</span>Self-Regulated Learning</span>
+        <span class="tag"><span class="k">Risk Level</span>Low</span>
+        <span class="tag"><span class="k">Data Sensitivity</span>Anonymized</span>
+      </div>
     </section>
 
     <main class="content" aria-label="Case registry content">
@@ -182,7 +189,7 @@
             <div class="v">No prior experience with generative AI tools assumed</div>
           </div>
           <div class="kv">
-            <div class="k">Prior Programming Background</div>
+            <div class="k">Prior Programming Background (Assumed)</div>
             <div class="v">None assumed</div>
           </div>
         </div>
@@ -248,19 +255,26 @@
 
           <div class="kv">
             <div class="k">AI Role</div>
-            <div class="v">ArtChat functions as an interactive learning assistant that provides course-specific, context-aware responses to student queries, supporting knowledge construction and self-regulated learning.</div>
+            <div class="v">
+              <ul class="checks" aria-label="AI role checkboxes">
+                <li class="check"><span class="box" aria-hidden="true"></span>Co-creator</li>
+                <li class="check"><span class="box checked" aria-hidden="true"></span>Tutor / Learning assistant</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Evaluator</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Automation tool</li>
+              </ul>
+            </div>
           </div>
 
           <div class="kv">
             <div class="k">User Interaction Model</div>
             <div class="v">
-              <ol class="bullets">
+              <ul class="bullets">
                 <li>Students log into ArtChat via web interface</li>
                 <li>Students type text-based questions related to course content</li>
                 <li>ArtChat retrieves relevant information using RAG and knowledge graphs from uploaded course materials</li>
                 <li>Students receive structured, citation-backed answers</li>
                 <li>Students may ask follow-up questions or request clarification</li>
-              </ol>
+              </ul>
             </div>
           </div>
 
@@ -288,12 +302,22 @@
           <div class="kv">
             <div class="k">Activity Flow</div>
             <div class="v">
-              <ol class="bullets">
+              <ul class="bullets">
                 <li>Instructor introduces weekly topic</li>
                 <li>Students engage with ArtChat during or after class for self-directed learning</li>
                 <li>Students reflect on responses and integrate them into understanding</li>
                 <li>Instructor facilitates discussion and addresses common questions</li>
-              </ol>
+              </ul>
+            </div>
+          </div>
+
+          <div class="kv">
+            <div class="k">Human vs AI Responsibilities</div>
+            <div class="v">
+              <ul class="bullets">
+                <li><strong>Human:</strong> question formulation, critical evaluation, reflection, discussion</li>
+                <li><strong>AI:</strong> information retrieval, contextual explanation, draft generation</li>
+              </ul>
             </div>
           </div>
 
@@ -311,28 +335,10 @@
       </section>
 
       <!-- 7 -->
-      <section class="card" aria-label="Human vs AI responsibilities">
-        <div class="cardHeader">
-          <h2>Human vs AI Responsibilities</h2>
-          <div class="num">7</div>
-        </div>
-        <div class="cardBody">
-          <div class="kv">
-            <div class="k">Human</div>
-            <div class="v">Question formulation, critical evaluation, reflection, discussion</div>
-          </div>
-          <div class="kv">
-            <div class="k">AI</div>
-            <div class="v">Information retrieval, contextual explanation, draft generation</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 8 -->
       <section class="card" aria-label="Observed challenges">
         <div class="cardHeader">
-          <h2>Observed Challenges</h2>
-          <div class="num">8</div>
+          <h2>Observed Challenges (Facilitator-Reported)</h2>
+          <div class="num">7</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -344,11 +350,11 @@
         </div>
       </section>
 
-      <!-- 9 -->
+      <!-- 8 -->
       <section class="card" aria-label="Design adaptations made">
         <div class="cardHeader">
           <h2>Design Adaptations Made</h2>
-          <div class="num">9</div>
+          <div class="num">8</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -360,11 +366,11 @@
         </div>
       </section>
 
-      <!-- 10 -->
+      <!-- 9 -->
       <section class="card" aria-label="Reported outcomes">
         <div class="cardHeader">
           <h2>Reported Outcomes</h2>
-          <div class="num">10</div>
+          <div class="num">9</div>
         </div>
         <div class="cardBody">
           <div class="kv">
@@ -389,11 +395,11 @@
         </div>
       </section>
 
-      <!-- 11 -->
+      <!-- 10 -->
       <section class="card" aria-label="Ethical and privacy considerations">
         <div class="cardHeader">
           <h2>Ethical &amp; Privacy Considerations</h2>
-          <div class="num">11</div>
+          <div class="num">10</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -402,6 +408,23 @@
             <li>Informed consent obtained from all participants</li>
             <li>Study approved by institutional ethics review</li>
             <li>Tool usage aligned with university IT policies</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="card" aria-label="Evidence type">
+        <div class="cardHeader">
+          <h2>Evidence Type</h2>
+          <div class="num">11</div>
+        </div>
+        <div class="cardBody">
+          <ul class="checks" aria-label="Evidence type checkboxes">
+            <li class="check"><span class="box checked" aria-hidden="true"></span>Practitioner observation</li>
+            <li class="check"><span class="box checked" aria-hidden="true"></span>Activity documentation</li>
+            <li class="check"><span class="box checked" aria-hidden="true"></span>Pre/post assessment</li>
+            <li class="check"><span class="box checked" aria-hidden="true"></span>Learning analytics</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Student artifacts retained</li>
           </ul>
         </div>
       </section>
@@ -439,34 +462,55 @@
       </section>
 
       <!-- 13 -->
-      <section class="card" aria-label="Contributors">
+      <section class="card" aria-label="Case status">
         <div class="cardHeader">
-          <h2>Contributors</h2>
+          <h2>Case Status</h2>
           <div class="num">13</div>
         </div>
         <div class="cardBody">
+          <ul class="checks" aria-label="Case status checkboxes">
+            <li class="check"><span class="box checked" aria-hidden="true"></span>Completed</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Planned expansion</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Scaling across sites</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section class="card" aria-label="AAB classification tags">
+        <div class="cardHeader">
+          <h2>AAB Classification Tags</h2>
+          <div class="num">14</div>
+        </div>
+        <div class="cardBody">
           <div class="kv">
-            <div class="k">Author</div>
-            <div class="v">TBD</div>
+            <div class="k">Age</div>
+            <div class="v">Higher Ed (19–23)</div>
           </div>
           <div class="kv">
-            <div class="k">Editor</div>
-            <div class="v">Cao, Christopher — Research Assistant, M.S. Student, California State University, Fullerton</div>
+            <div class="k">Setting</div>
+            <div class="v">University</div>
+          </div>
+          <div class="kv">
+            <div class="k">AI Function</div>
+            <div class="v">RAG Chatbot / Conversational AI</div>
+          </div>
+          <div class="kv">
+            <div class="k">Pedagogy</div>
+            <div class="v">Self-Regulated Learning</div>
+          </div>
+          <div class="kv">
+            <div class="k">Risk Level</div>
+            <div class="v">Low</div>
+          </div>
+          <div class="kv">
+            <div class="k">Data Sensitivity</div>
+            <div class="v">Anonymized</div>
           </div>
         </div>
       </section>
 
     </main>
-
-    <!-- AAB Classification Tags — for future search/filter functionality -->
-    <div class="tags" aria-label="AAB classification tags" style="padding: 0 var(--pad) 32px;">
-      <span class="tag"><span class="k">Age</span>Higher Ed (19–23)</span>
-      <span class="tag"><span class="k">Setting</span>University</span>
-      <span class="tag"><span class="k">AI Function</span>RAG Chatbot / Conversational AI</span>
-      <span class="tag"><span class="k">Pedagogy</span>Self-Regulated Learning</span>
-      <span class="tag"><span class="k">Risk Level</span>Low</span>
-      <span class="tag"><span class="k">Data Sensitivity</span>Anonymized</span>
-    </div>
 
     <footer aria-label="Page footer">
       <div class="left">
@@ -491,7 +535,7 @@
         </button>
       </div>
       <p id="citationText" class="citation">
-        Faculty of Applied Sciences, Macao Polytechnic University; Art and Design School, Anhui Broadcasting Movie and Television College. AAB-CASE-2026-ED-XXX. AI Assessment Board (AAB) Case Registry. Published 2026. URL (accessed 2026). Registry entry prepared by Cao, Christopher (Research Assistant, M.S. Student, California State University, Fullerton).
+        Faculty of Applied Sciences, Macao Polytechnic University; Art and Design School, Anhui Broadcasting Movie and Television College. AAB-CASE-2026-ED-XXX. AI Assessment Board (AAB) Case Registry. Published 2026. URL (accessed 2026)
       </p>
       <div class="modal-actions">
         <button class="btn primary" type="button" onclick="copyCitation()">Copy Citation</button>
