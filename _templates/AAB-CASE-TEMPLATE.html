@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!--
+  AAB Case Registry — Page Template
+  ──────────────────────────────────────────────────────────────────────────────
+  HOW TO USE THIS TEMPLATE
+  1. Copy this file into: cases/[Case Folder Name]/[CASE-ID].html
+  2. Replace every {{PLACEHOLDER}} with the real value (search "{{" to find all)
+  3. Check all checkbox items — set class="box checked" for applicable ones
+  4. Do NOT change any wording in labels, section headings, or structural HTML
+  5. Only fill in the .v / .value / .bullets / .muted content areas
+  ──────────────────────────────────────────────────────────────────────────────
+  CASE ID FORMAT
+    AAB-CASE-[YEAR]-[CATEGORY]-[NUMBER]
+    Category codes: LL (Lifelong Learning), ED (Higher Ed), K12, LIB, etc.
+    Example: AAB-CASE-2026-ED-001
+  ──────────────────────────────────────────────────────────────────────────────
+  AFTER FILLING IN:
+  - Add a link in index.html under the correct section
+  - Open a Pull Request and tag the professor for Case ID + date confirmation
+  - Do not publish until Case ID is finalized
+  ──────────────────────────────────────────────────────────────────────────────
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AAB Case Registry — {{CASE-ID}}</title>
+  <meta name="description" content="AAB Case Registry entry {{CASE-ID}} — {{ONE-SENTENCE DESCRIPTION OF THE CASE}}." />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../AAB-CASE-2025-LL-001.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand" aria-label="AAB branding">
+        <img class="mark" src="../../assets/AAB transparent.png" alt="AI Assessment Board logo" />
+        <div>
+          <h1>AI Assessment Board (AAB)</h1>
+          <div class="sub">Case Registry • Public entry page</div>
+        </div>
+      </div>
+
+      <div class="actions" aria-label="Page actions">
+        <button class="btn" onclick="openCiteModal()" type="button" title="Cite this case">
+          Cite This Case
+        </button>
+        <button class="btn" onclick="window.print()" type="button" title="Print / Save as PDF">
+          <span class="dot" aria-hidden="true"></span> Print / Save PDF
+        </button>
+        <button class="btn primary" onclick="copyCaseId()" type="button" title="Copy Case ID">
+          Copy Case ID
+        </button>
+      </div>
+    </div>
+
+    <section class="hero" aria-label="Case header">
+      <div class="heroInner">
+        <div class="caseTitle">
+          <div class="kicker">
+            <span class="badge"><strong>Case Type</strong> Case Report</span>
+            <!-- Status options: Completed | Ongoing | Planned -->
+            <span class="badge"><strong>Status</strong> {{STATUS}}</span>
+          </div>
+
+          <h2 class="caseId" id="caseId">{{CASE-ID}}</h2>
+
+          <p class="summary">
+            {{2-3 sentence summary of the activity: what was done, who was involved, where, and the primary focus.}}
+          </p>
+
+          <div class="note" role="note">
+            This page documents a real-world educational activity for registry purposes. It is descriptive
+            and does not imply endorsement of any specific tool.
+          </div>
+        </div>
+
+        <aside class="metaCard" aria-label="Case metadata">
+          <div class="metaGrid">
+            <div class="metaItem">
+              <div class="label">Organization Type</div>
+              <div class="value">{{e.g. Afterschool center / Higher Education / K-12 School / Public Library}}</div>
+            </div>
+            <div class="metaItem">
+              <div class="label">Location</div>
+              <div class="value">{{City, State/Region, Country}}</div>
+            </div>
+            <div class="metaItem">
+              <div class="label">Setting</div>
+              <div class="value">{{e.g. Formal classroom-based learning / Informal afterschool / Online}}</div>
+            </div>
+            <div class="metaItem">
+              <div class="label">Session Format</div>
+              <div class="value">{{e.g. 5-day camp / 13 weeks • 90 min/week / Single session}}</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <!-- Classification tags — fill in values, keep the <span class="k"> labels exactly as-is -->
+      <div class="tags" aria-label="AAB classification tags">
+        <span class="tag"><span class="k">Age</span>{{e.g. Elementary (5–7) / Higher Ed (19–23) / Mixed}}</span>
+        <span class="tag"><span class="k">Setting</span>{{e.g. Afterschool center / University / Public library}}</span>
+        <span class="tag"><span class="k">AI Function</span>{{e.g. RAG Chatbot / Generative Text/Image/Voice / Automation}}</span>
+        <span class="tag"><span class="k">Pedagogy</span>{{e.g. Self-Regulated Learning / Non-collab + collab / Project-based}}</span>
+        <span class="tag"><span class="k">Risk Level</span>{{Low / Medium / High}}</span>
+        <span class="tag"><span class="k">Data Sensitivity</span>{{None / Anonymized / Identified}}</span>
+      </div>
+    </section>
+
+    <main class="content" aria-label="Case registry content">
+
+      <!-- 1 -->
+      <section class="card" aria-label="Implementing organization">
+        <div class="cardHeader">
+          <h2>Implementing Organization</h2>
+          <div class="num">1</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Organization Type</div>
+            <div class="v">{{Organization type}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Organizations</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Primary organization name}}</li>
+                <!-- Add more <li> items if multiple orgs are involved -->
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Location</div>
+            <div class="v">{{City, State/Region, Country}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Primary Facilitator Role</div>
+            <div class="v">{{e.g. Instructor / Graduate students / Trained educators}}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="card" aria-label="Learning context">
+        <div class="cardHeader">
+          <h2>Learning Context</h2>
+          <div class="num">2</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Setting Type</div>
+            <div class="v">
+              <!-- Check all that apply: change class="box" to class="box checked" -->
+              <ul class="checks" aria-label="Setting type checkboxes">
+                <li class="check"><span class="box" aria-hidden="true"></span>Informal learning</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Afterschool center</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>In-school (K–12)</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>In-class (Higher Ed)</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Private program</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Public library</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Session Format</div>
+            <div class="v">{{e.g. Summer camp / Semester course / Workshop}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Duration</div>
+            <div class="v">{{e.g. 5 days / 13 weeks • 90 min/week / 2-hour single session}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Group Size</div>
+            <div class="v">{{Approximate number of learners}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Devices</div>
+            <div class="v">{{e.g. Individual device / Shared lab computers / Personal mobile devices}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Constraints</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Constraint 1 — e.g. No individual logins allowed}}</li>
+                <li>{{Constraint 2 — e.g. No personal data collection}}</li>
+                <!-- Add or remove items as needed -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="card" aria-label="Learner profile">
+        <div class="cardHeader">
+          <h2>Learner Profile (Non-identifiable)</h2>
+          <div class="num">3</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Age Range</div>
+            <div class="v">{{e.g. Approx. ages 5–7 / Undergraduate students (19–23)}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Program</div>
+            <div class="v">{{e.g. Digital Media Art / General K-12 / N/A}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Prior AI Exposure (Assumed)</div>
+            <div class="v">{{e.g. No prior experience with generative AI tools assumed / Some exposure assumed}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Prior Programming Background (Assumed)</div>
+            <div class="v">{{e.g. None assumed / Basic coding background assumed}}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="card" aria-label="Educational intent">
+        <div class="cardHeader">
+          <h2>Educational Intent</h2>
+          <div class="num">4</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Primary Learning Goals</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Primary goal 1}}</li>
+                <li>{{Primary goal 2}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Secondary Learning Goals</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Secondary goal 1}}</li>
+                <li>{{Secondary goal 2}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">What This Was Not</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{e.g. Not a programming lesson}}</li>
+                <li>{{e.g. Not an AI theory lesson}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="card" aria-label="AI tool description">
+        <div class="cardHeader">
+          <h2>AI Tool Description</h2>
+          <div class="num">5</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Tool Name</div>
+            <div class="v">{{Tool name or "Undisclosed"}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Tool Type</div>
+            <div class="v">{{e.g. Generative AI storytelling app / RAG chatbot / Text-to-image tool}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">AI Role</div>
+            <div class="v">
+              <!-- Check all that apply -->
+              <ul class="checks" aria-label="AI role checkboxes">
+                <li class="check"><span class="box" aria-hidden="true"></span>Co-creator</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Tutor / Learning assistant</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Evaluator</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Automation tool</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">User Interaction Model</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Step 1 of how learners interact with the tool}}</li>
+                <li>{{Step 2}}</li>
+                <li>{{Step 3}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Safeguards</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Safeguard 1 — e.g. No free-form open chat}}</li>
+                <li>{{Safeguard 2 — e.g. Content moderation enabled}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="card" aria-label="Activity design">
+        <div class="cardHeader">
+          <h2>Activity Design</h2>
+          <div class="num">6</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Activity Flow</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Step 1}}</li>
+                <li>{{Step 2}}</li>
+                <li>{{Step 3}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Human vs AI Responsibilities</div>
+            <div class="v">
+              <ul class="bullets">
+                <li><strong>Human:</strong> {{what the learner/facilitator does}}</li>
+                <li><strong>AI:</strong> {{what the AI does}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Scaffolding Strategies</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{e.g. Prompt cards with examples}}</li>
+                <li>{{e.g. Educator-led reflection questions}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="card" aria-label="Observed challenges">
+        <div class="cardHeader">
+          <h2>Observed Challenges (Facilitator-Reported)</h2>
+          <div class="num">7</div>
+        </div>
+        <div class="cardBody">
+          <ul class="bullets">
+            <li>{{Challenge 1}}</li>
+            <li>{{Challenge 2}}</li>
+            <!-- Add or remove items as needed -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="card" aria-label="Design adaptations made">
+        <div class="cardHeader">
+          <h2>Design Adaptations Made</h2>
+          <div class="num">8</div>
+        </div>
+        <div class="cardBody">
+          <ul class="bullets">
+            <li>{{Adaptation 1 — what was changed and why}}</li>
+            <li>{{Adaptation 2}}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="card" aria-label="Reported outcomes">
+        <div class="cardHeader">
+          <!-- If outcomes are measured (pre/post), remove "(Descriptive, Not Measured)" -->
+          <h2>Reported Outcomes (Descriptive, Not Measured)</h2>
+          <div class="num">9</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Engagement</div>
+            <div class="v">{{Description of learner engagement levels}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Learning Signals (Qualitative)</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{Observation 1}}</li>
+                <li>{{Observation 2}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Facilitator Reflection</div>
+            <!-- Use class="v muted" for direct quotes -->
+            <div class="v muted">"{{Direct quote from facilitator, if available. Otherwise remove this row.}}"</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section class="card" aria-label="Ethical and privacy considerations">
+        <div class="cardHeader">
+          <h2>Ethical &amp; Privacy Considerations</h2>
+          <div class="num">10</div>
+        </div>
+        <div class="cardBody">
+          <ul class="bullets">
+            <li>{{e.g. No personal data collected}}</li>
+            <li>{{e.g. All student data anonymized}}</li>
+            <li>{{e.g. Informed consent obtained}}</li>
+            <!-- Add or remove items as needed -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="card" aria-label="Evidence type">
+        <div class="cardHeader">
+          <h2>Evidence Type</h2>
+          <div class="num">11</div>
+        </div>
+        <div class="cardBody">
+          <!-- Check all that apply -->
+          <ul class="checks" aria-label="Evidence type checkboxes">
+            <li class="check"><span class="box" aria-hidden="true"></span>Practitioner observation</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Activity documentation</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Pre/post assessment</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Learning analytics</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Student artifacts retained</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section class="card" aria-label="Relevance to research">
+        <div class="cardHeader">
+          <h2>Relevance to AI Education Research</h2>
+          <div class="num">12</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Potential Research Use</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>{{e.g. Design-based research}}</li>
+                <li>{{e.g. AI literacy studies}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">Relevant Research Domains</div>
+            <div class="v">
+              <ul class="bullets">
+                <li>Learning sciences</li>
+                <li>Educational technology</li>
+                <li>AI literacy</li>
+                <li>{{Add domain if applicable}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section class="card" aria-label="Case status">
+        <div class="cardHeader">
+          <h2>Case Status</h2>
+          <div class="num">13</div>
+        </div>
+        <div class="cardBody">
+          <!-- Check all that apply -->
+          <ul class="checks" aria-label="Case status checkboxes">
+            <li class="check"><span class="box" aria-hidden="true"></span>Completed</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Planned expansion</li>
+            <li class="check"><span class="box" aria-hidden="true"></span>Scaling across sites</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section class="card" aria-label="AAB classification tags">
+        <div class="cardHeader">
+          <h2>AAB Classification Tags</h2>
+          <div class="num">14</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv"><div class="k">Age</div><div class="v">{{Age group}}</div></div>
+          <div class="kv"><div class="k">Setting</div><div class="v">{{Setting type}}</div></div>
+          <div class="kv"><div class="k">AI Function</div><div class="v">{{AI function type}}</div></div>
+          <div class="kv"><div class="k">Pedagogy</div><div class="v">{{Pedagogical approach}}</div></div>
+          <div class="kv"><div class="k">Risk Level</div><div class="v">{{Low / Medium / High}}</div></div>
+          <div class="kv"><div class="k">Data Sensitivity</div><div class="v">{{None / Anonymized / Identified}}</div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer aria-label="Page footer">
+      <div class="left">
+        <span class="pill">Registry: Case</span>
+        <span class="pill">ID: <span style="font-family:var(--mono);">{{CASE-ID}}</span></span>
+        <span class="pill">Case Date: {{Date or date range of the activity}}</span>
+      </div>
+      <div>
+        <span class="pill">AAB • Case Registry</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Citation Modal -->
+  <div id="citeModal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="citeTitle">
+    <div class="modal-overlay" onclick="closeCiteModal()"></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h3 id="citeTitle">Cite This Case</h3>
+        <button class="btn modal-close" type="button" onclick="closeCiteModal()" aria-label="Close citation popup">
+          Close
+        </button>
+      </div>
+      <!--
+        Citation format:
+        Last, First; Last, First. CASE-ID. AI Assessment Board (AAB) Case Registry. Published YEAR. URL (accessed YYYY-MM-DD).
+        List the original researcher/author first, then contributors.
+      -->
+      <p id="citationText" class="citation">
+        {{Last, First; Last, First}}. {{CASE-ID}}. AI Assessment Board (AAB) Case Registry. Published {{YEAR}}. {{URL}} (accessed {{YYYY-MM-DD}})
+      </p>
+      <div class="modal-actions">
+        <button class="btn primary" type="button" onclick="copyCitation()">Copy Citation</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCiteModal(){
+      const modal = document.getElementById("citeModal");
+      modal.classList.remove("hidden");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeCiteModal(){
+      const modal = document.getElementById("citeModal");
+      modal.classList.add("hidden");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function copyCitation(){
+      const citation = document.getElementById("citationText").textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(citation).then(() => toast("Citation copied"));
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = citation;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("Citation copied");
+      }
+    }
+
+    function copyCaseId(){
+      const id = document.getElementById("caseId").textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(id).then(() => toast("Copied: " + id));
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = id;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("Copied: " + id);
+      }
+    }
+
+    function toast(msg){
+      const t = document.createElement("div");
+      t.textContent = msg;
+      t.style.position = "fixed";
+      t.style.left = "50%";
+      t.style.bottom = "22px";
+      t.style.transform = "translateX(-50%)";
+      t.style.padding = "10px 12px";
+      t.style.borderRadius = "999px";
+      t.style.background = "rgba(0,0,0,0.72)";
+      t.style.border = "1px solid rgba(255,255,255,0.22)";
+      t.style.color = "rgba(255,255,255,0.92)";
+      t.style.fontSize = "13px";
+      t.style.zIndex = "9999";
+      t.style.boxShadow = "0 12px 26px rgba(0,0,0,0.35)";
+      document.body.appendChild(t);
+      setTimeout(() => {
+        t.style.opacity = "0";
+        t.style.transition = "opacity 0.25s ease";
+      }, 1100);
+      setTimeout(() => t.remove(), 1500);
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape"){ closeCiteModal(); }
+    });
+  </script>
+</body>
+</html>
