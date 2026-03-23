@@ -16,8 +16,9 @@
   ──────────────────────────────────────────────────────────────────────────────
   AFTER FILLING IN:
   - Add a link in index.html under the correct section
-  - Open a Pull Request and tag the professor for Case ID + date confirmation
-  - Do not publish until Case ID is finalized
+  - Open a Pull Request and tag the professor for:
+      Case ID, specific date, original author name(s), and final URL
+  - Do not publish until Case ID and author are confirmed
   ──────────────────────────────────────────────────────────────────────────────
 -->
 <html lang="en">
@@ -62,6 +63,10 @@
             <span class="badge"><strong>Case Type</strong> Case Report</span>
             <!-- Status options: Completed | Ongoing | Planned -->
             <span class="badge"><strong>Status</strong> {{STATUS}}</span>
+            <!-- Author: original researcher/author of the study — confirm with professor -->
+            <span class="badge"><strong>Author</strong> {{AUTHOR LAST, FIRST or TBD}}</span>
+            <!-- Editor: person who prepared the registry entry -->
+            <span class="badge"><strong>Editor</strong> {{EDITOR LAST, FIRST}}</span>
           </div>
 
           <h2 class="caseId" id="caseId">{{CASE-ID}}</h2>
@@ -99,16 +104,6 @@
       </div>
 
       <div class="divider" role="separator" aria-hidden="true"></div>
-
-      <!-- Classification tags — fill in values, keep the <span class="k"> labels exactly as-is -->
-      <div class="tags" aria-label="AAB classification tags">
-        <span class="tag"><span class="k">Age</span>{{e.g. Elementary (5–7) / Higher Ed (19–23) / Mixed}}</span>
-        <span class="tag"><span class="k">Setting</span>{{e.g. Afterschool center / University / Public library}}</span>
-        <span class="tag"><span class="k">AI Function</span>{{e.g. RAG Chatbot / Generative Text/Image/Voice / Automation}}</span>
-        <span class="tag"><span class="k">Pedagogy</span>{{e.g. Self-Regulated Learning / Non-collab + collab / Project-based}}</span>
-        <span class="tag"><span class="k">Risk Level</span>{{Low / Medium / High}}</span>
-        <span class="tag"><span class="k">Data Sensitivity</span>{{None / Anonymized / Identified}}</span>
-      </div>
     </section>
 
     <main class="content" aria-label="Case registry content">
@@ -214,7 +209,7 @@
             <div class="v">{{e.g. No prior experience with generative AI tools assumed / Some exposure assumed}}</div>
           </div>
           <div class="kv">
-            <div class="k">Prior Programming Background (Assumed)</div>
+            <div class="k">Prior Programming Background</div>
             <div class="v">{{e.g. None assumed / Basic coding background assumed}}</div>
           </div>
         </div>
@@ -274,24 +269,18 @@
           </div>
           <div class="kv">
             <div class="k">AI Role</div>
-            <div class="v">
-              <!-- Check all that apply -->
-              <ul class="checks" aria-label="AI role checkboxes">
-                <li class="check"><span class="box" aria-hidden="true"></span>Co-creator</li>
-                <li class="check"><span class="box" aria-hidden="true"></span>Tutor / Learning assistant</li>
-                <li class="check"><span class="box" aria-hidden="true"></span>Evaluator</li>
-                <li class="check"><span class="box" aria-hidden="true"></span>Automation tool</li>
-              </ul>
-            </div>
+            <!-- Write a sentence describing how the AI functions in this context -->
+            <div class="v">{{Describe the AI's role in plain text — e.g. "X functions as an interactive learning assistant that..."}}</div>
           </div>
           <div class="kv">
             <div class="k">User Interaction Model</div>
             <div class="v">
-              <ul class="bullets">
+              <!-- Numbered steps showing how learners interact with the tool -->
+              <ol class="bullets">
                 <li>{{Step 1 of how learners interact with the tool}}</li>
                 <li>{{Step 2}}</li>
                 <li>{{Step 3}}</li>
-              </ul>
+              </ol>
             </div>
           </div>
           <div class="kv">
@@ -316,20 +305,12 @@
           <div class="kv">
             <div class="k">Activity Flow</div>
             <div class="v">
-              <ul class="bullets">
+              <!-- Numbered steps showing the sequence of the activity -->
+              <ol class="bullets">
                 <li>{{Step 1}}</li>
                 <li>{{Step 2}}</li>
                 <li>{{Step 3}}</li>
-              </ul>
-            </div>
-          </div>
-          <div class="kv">
-            <div class="k">Human vs AI Responsibilities</div>
-            <div class="v">
-              <ul class="bullets">
-                <li><strong>Human:</strong> {{what the learner/facilitator does}}</li>
-                <li><strong>AI:</strong> {{what the AI does}}</li>
-              </ul>
+              </ol>
             </div>
           </div>
           <div class="kv">
@@ -345,10 +326,28 @@
       </section>
 
       <!-- 7 -->
+      <section class="card" aria-label="Human vs AI responsibilities">
+        <div class="cardHeader">
+          <h2>Human vs AI Responsibilities</h2>
+          <div class="num">7</div>
+        </div>
+        <div class="cardBody">
+          <div class="kv">
+            <div class="k">Human</div>
+            <div class="v">{{What the learner/facilitator is responsible for — e.g. question formulation, critical evaluation, reflection}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">AI</div>
+            <div class="v">{{What the AI does — e.g. information retrieval, contextual explanation, draft generation}}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 -->
       <section class="card" aria-label="Observed challenges">
         <div class="cardHeader">
-          <h2>Observed Challenges (Facilitator-Reported)</h2>
-          <div class="num">7</div>
+          <h2>Observed Challenges</h2>
+          <div class="num">8</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -359,11 +358,11 @@
         </div>
       </section>
 
-      <!-- 8 -->
+      <!-- 9 -->
       <section class="card" aria-label="Design adaptations made">
         <div class="cardHeader">
           <h2>Design Adaptations Made</h2>
-          <div class="num">8</div>
+          <div class="num">9</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -373,12 +372,11 @@
         </div>
       </section>
 
-      <!-- 9 -->
+      <!-- 10 -->
       <section class="card" aria-label="Reported outcomes">
         <div class="cardHeader">
-          <!-- If outcomes are measured (pre/post), remove "(Descriptive, Not Measured)" -->
-          <h2>Reported Outcomes (Descriptive, Not Measured)</h2>
-          <div class="num">9</div>
+          <h2>Reported Outcomes</h2>
+          <div class="num">10</div>
         </div>
         <div class="cardBody">
           <div class="kv">
@@ -396,17 +394,17 @@
           </div>
           <div class="kv">
             <div class="k">Facilitator Reflection</div>
-            <!-- Use class="v muted" for direct quotes -->
-            <div class="v muted">"{{Direct quote from facilitator, if available. Otherwise remove this row.}}"</div>
+            <!-- Use class="v muted" for direct quotes. Remove this row if no quote available. -->
+            <div class="v muted">"{{Direct quote from facilitator}}"</div>
           </div>
         </div>
       </section>
 
-      <!-- 10 -->
+      <!-- 11 -->
       <section class="card" aria-label="Ethical and privacy considerations">
         <div class="cardHeader">
           <h2>Ethical &amp; Privacy Considerations</h2>
-          <div class="num">10</div>
+          <div class="num">11</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
@@ -414,24 +412,6 @@
             <li>{{e.g. All student data anonymized}}</li>
             <li>{{e.g. Informed consent obtained}}</li>
             <!-- Add or remove items as needed -->
-          </ul>
-        </div>
-      </section>
-
-      <!-- 11 -->
-      <section class="card" aria-label="Evidence type">
-        <div class="cardHeader">
-          <h2>Evidence Type</h2>
-          <div class="num">11</div>
-        </div>
-        <div class="cardBody">
-          <!-- Check all that apply -->
-          <ul class="checks" aria-label="Evidence type checkboxes">
-            <li class="check"><span class="box" aria-hidden="true"></span>Practitioner observation</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Activity documentation</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Pre/post assessment</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Learning analytics</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Student artifacts retained</li>
           </ul>
         </div>
       </section>
@@ -467,38 +447,36 @@
       </section>
 
       <!-- 13 -->
-      <section class="card" aria-label="Case status">
+      <section class="card" aria-label="Contributors">
         <div class="cardHeader">
-          <h2>Case Status</h2>
+          <h2>Contributors</h2>
           <div class="num">13</div>
         </div>
         <div class="cardBody">
-          <!-- Check all that apply -->
-          <ul class="checks" aria-label="Case status checkboxes">
-            <li class="check"><span class="box" aria-hidden="true"></span>Completed</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Planned expansion</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Scaling across sites</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 14 -->
-      <section class="card" aria-label="AAB classification tags">
-        <div class="cardHeader">
-          <h2>AAB Classification Tags</h2>
-          <div class="num">14</div>
-        </div>
-        <div class="cardBody">
-          <div class="kv"><div class="k">Age</div><div class="v">{{Age group}}</div></div>
-          <div class="kv"><div class="k">Setting</div><div class="v">{{Setting type}}</div></div>
-          <div class="kv"><div class="k">AI Function</div><div class="v">{{AI function type}}</div></div>
-          <div class="kv"><div class="k">Pedagogy</div><div class="v">{{Pedagogical approach}}</div></div>
-          <div class="kv"><div class="k">Risk Level</div><div class="v">{{Low / Medium / High}}</div></div>
-          <div class="kv"><div class="k">Data Sensitivity</div><div class="v">{{None / Anonymized / Identified}}</div></div>
+          <div class="kv">
+            <div class="k">Author</div>
+            <!-- Original researcher or study author — confirm with professor -->
+            <div class="v">{{Last, First — Institution}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Editor</div>
+            <!-- Person who prepared the registry entry -->
+            <div class="v">{{Last, First — Role, Institution}}</div>
+          </div>
         </div>
       </section>
 
     </main>
+
+    <!-- AAB Classification Tags — for future search/filter functionality -->
+    <div class="tags" aria-label="AAB classification tags" style="padding: 0 var(--pad) 32px;">
+      <span class="tag"><span class="k">Age</span>{{e.g. Elementary (5–7) / Higher Ed (19–23) / Mixed}}</span>
+      <span class="tag"><span class="k">Setting</span>{{e.g. Afterschool center / University / Public library}}</span>
+      <span class="tag"><span class="k">AI Function</span>{{e.g. RAG Chatbot / Generative Text/Image/Voice / Automation}}</span>
+      <span class="tag"><span class="k">Pedagogy</span>{{e.g. Self-Regulated Learning / Non-collab + collab / Project-based}}</span>
+      <span class="tag"><span class="k">Risk Level</span>{{Low / Medium / High}}</span>
+      <span class="tag"><span class="k">Data Sensitivity</span>{{None / Anonymized / Identified}}</span>
+    </div>
 
     <footer aria-label="Page footer">
       <div class="left">
@@ -526,10 +504,10 @@
       <!--
         Citation format:
         Last, First; Last, First. CASE-ID. AI Assessment Board (AAB) Case Registry. Published YEAR. URL (accessed YYYY-MM-DD).
-        List the original researcher/author first, then contributors.
+        List the original author first, then the editor.
       -->
       <p id="citationText" class="citation">
-        {{Last, First; Last, First}}. {{CASE-ID}}. AI Assessment Board (AAB) Case Registry. Published {{YEAR}}. {{URL}} (accessed {{YYYY-MM-DD}})
+        {{Last, First (Author); Last, First (Editor)}}. {{CASE-ID}}. AI Assessment Board (AAB) Case Registry. Published {{YEAR}}. {{URL}} (accessed {{YYYY-MM-DD}}). Registry entry prepared by {{Editor Last, First}} ({{Role, Institution}}).
       </p>
       <div class="modal-actions">
         <button class="btn primary" type="button" onclick="copyCitation()">Copy Citation</button>
