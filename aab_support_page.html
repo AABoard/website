@@ -291,6 +291,7 @@
     <nav class="nav">
       <a href="#about">About</a>
       <a href="aab-launch-announcement.html">News</a>
+      <a href="#Team">Team</a>
       <a href="#structure">Structure</a>
       <a href="#support">Letter of Support</a>
       <a href="#sign">Sign</a>
@@ -508,23 +509,21 @@ Regional Liaisons / Pilots</div>
 </section>
 
 <section id="supporters">
-
   <div class="container">
 
     <h2>Founding Supporters</h2>
 
-    <div id="supporters-status" class="intro" style="margin-top:18px;">Loading supporters…</div>
+    <div id="supporters-status" class="intro" style="margin-top:18px;">
+      Loading supporters…
+    </div>
 
-    <div id="supporters-list" class="mini-grid" aria-live="polite"></div>
+    <div id="supporters-list" class="mini-grid" aria-live="polite">
+      </div>
 
   </div>
-
 </section>
-
 <section id="advisory-template">
-
   <div class="container">
-
     <h2>Academic Advisory Board</h2>
     <div class="card">
       <h3>Role of the Academic Advisory Board</h3>
@@ -543,45 +542,14 @@ Regional Liaisons / Pilots</div>
 
     <div class="highlight-box">
       <h3>Founding Academic Advisors</h3>
-      <p class="intro" style="margin-bottom:0; max-width:none;">
-        Replace the sample entries below with your confirmed advisors.
-      </p>
+      <div id="advisory-status" class="intro" style="margin-top:10px;">Loading advisors...</div>
     </div>
 
     <div style="height:18px"></div>
 
-    <div class="mini-grid">
-      <div class="mini-card">
-        <h3>Prof. Jane Smith</h3>
-        <p><strong>University:</strong> University of Southern California</p>
-        <p><strong>Field:</strong> Artificial Intelligence / Education</p>
-        <p><strong>Region:</strong> United States</p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Prof. Michael Lee</h3>
-        <p><strong>University:</strong> National University of Singapore</p>
-        <p><strong>Field:</strong> Learning Sciences</p>
-        <p><strong>Region:</strong> Southeast Asia</p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Prof. Ana Rodriguez</h3>
-        <p><strong>University:</strong> University of Barcelona</p>
-        <p><strong>Field:</strong> AI Policy / Society</p>
-        <p><strong>Region:</strong> Europe</p>
-      </div>
-
-      <div class="mini-card">
-        <h3>Prof. David Chen</h3>
-        <p><strong>University:</strong> University of Macau</p>
-        <p><strong>Field:</strong> Computer Science</p>
-        <p><strong>Region:</strong> Macao</p>
-      </div>
-    </div>
-
+    <div id="advisory-list" class="mini-grid" aria-live="polite">
+        </div>
   </div>
-
 </section>
 
 <section id="sign">
@@ -629,10 +597,150 @@ Regional Liaisons / Pilots</div>
 
 </footer>
 
-  
-  
-  
   <script>
+    // ==========================================
+    // AAB Data Rendering Setup (Global & Advisory)
+    // ==========================================
+    
+    // Points to the local CSV file in the root of your GitHub Pages project
+    const SUPPORTERS_CSV_URL = "./supporters.csv";
+
+    /**
+     * Helper to parse CSV rows with quotes/commas
+     */
+    function parseCSVRow(row) {
+      const result = [];
+      let current = "";
+      let inQuotes = false;
+      for (let i = 0; i < row.length; i++) {
+        const char = row[i];
+        const next = row[i + 1];
+        if (char === '"') {
+          if (inQuotes && next === '"') { current += '"'; i++; } 
+          else { inQuotes = !inQuotes; }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = "";
+        } else { current += char; }
+      }
+      result.push(current.trim());
+      return result;
+    }
+
+    /**
+     * Helper to map CSV text to Objects
+     */
+    function parseCSV(text) {
+      const rows = text.split(/\r?\n/).filter(Boolean);
+      if (!rows.length) return [];
+      const headers = parseCSVRow(rows[0]);
+      return rows.slice(1).map(row => {
+        const values = parseCSVRow(row);
+        const entry = {};
+        headers.forEach((header, idx) => {
+          entry[header.trim()] = values[idx] ? values[idx].trim() : "";
+        });
+        return entry;
+      });
+    }
+
+    /**
+     * Logic to handle the full-sentence radio button responses
+     */
+    function isYes(value) {
+      if (!value) return false;
+      const v = value.toLowerCase().trim();
+      return v.startsWith("yes"); 
+    }
+
+    /**
+     * Function 1: Render General Supporters
+     */
+    function renderSupporters(entries) {
+      const list = document.getElementById("supporters-list");
+      const status = document.getElementById("supporters-status");
+
+      const publicEntries = entries.filter(entry => {
+        const consent = entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a supporter."] || "";
+        const support = entry["I support the mission of the International AI Assessment Board (AAB) and endorse the Letter of Support."] || "";
+        return entry["Name"] && isYes(consent) && isYes(support);
+      });
+
+      if (!publicEntries.length) {
+        status.textContent = "No public supporters listed yet.";
+        return;
+      }
+
+      status.textContent = `${publicEntries.length} supporter${publicEntries.length > 1 ? "s" : ""} listed.`;
+      
+      list.innerHTML = publicEntries.map(entry => `
+        <div class="mini-card">
+          <h3>${entry["Name"]}</h3>
+          ${entry["Title / Position"] ? `<p><strong>Title:</strong> ${entry["Title / Position"]}</p>` : ""}
+          ${entry["Institution / Organization"] ? `<p><strong>Institution:</strong> ${entry["Institution / Organization"]}</p>` : ""}
+          ${entry["Country"] ? `<p><strong>Country:</strong> ${entry["Country"]}</p>` : ""}
+        </div>
+      `).join("");
+    }
+
+    /**
+     * Function 2: Render Academic Advisory Board
+     */
+    function renderAdvisoryBoard(entries) {
+      const list = document.getElementById("advisory-list");
+      const status = document.getElementById("advisory-status");
+
+      // ## new logic
+      // Filters specifically for the Advisory Board consent column
+      const advisoryEntries = entries.filter(entry => {
+        const advisoryConsent = entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board."] || "";
+        return entry["Name"] && isYes(advisoryConsent);
+      });
+
+      if (!advisoryEntries.length) {
+        status.textContent = "Founding members are currently being confirmed.";
+        if(list) list.innerHTML = "";
+        return;
+      }
+
+      status.textContent = `${advisoryEntries.length} Academic Advisor${advisoryEntries.length > 1 ? "s" : ""} confirmed.`;
+      
+      list.innerHTML = advisoryEntries.map(entry => `
+        <div class="mini-card">
+          <h3>${entry["Name"]}</h3>
+          <p><strong>University:</strong> ${entry["Institution / Organization"] || "N/A"}</p>
+          <p><strong>Field:</strong> ${entry["Title / Position"] || "N/A"}</p>
+          <p><strong>Region:</strong> ${entry["Country"] || "N/A"}</p>
+        </div>
+      `).join("");
+    }
+
+    /**
+     * Main Loader
+     */
+    async function loadAllAABData() {
+      try {
+        const response = await fetch(SUPPORTERS_CSV_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("CSV file not found.");
+        
+        const csvText = await response.text();
+        const entries = parseCSV(csvText);
+
+        // Run both validation logics on the data
+        renderSupporters(entries);
+        renderAdvisoryBoard(entries);
+
+      } catch (error) {
+        console.error("AAB Data Error:", error);
+      }
+    }
+
+    // Initialize
+    loadAllAABData();
+</script>
+  
+  
+  <!-- <script>
     // ================================
     // AAB Supporters Auto-Display Setup
     // ================================
@@ -767,7 +875,7 @@ Regional Liaisons / Pilots</div>
     }
 
     loadSupporters();
-  </script>
+  </script> -->
 
 </body>
 </html>
