@@ -1,13 +1,33 @@
 <!DOCTYPE html>
+<!--
+  AAB Case Registry — Page Template
+  ──────────────────────────────────────────────────────────────────────────────
+  HOW TO USE THIS TEMPLATE
+  1. Copy this file into: cases/[Case Folder Name]/[CASE-ID].html
+  2. Replace every {{PLACEHOLDER}} with the real value (search "{{" to find all)
+  3. Check all checkbox items — set class="box checked" for applicable ones
+  4. Do NOT change any wording in labels, section headings, or structural HTML
+  5. Only fill in the .v / .value / .bullets / .muted content areas
+  ──────────────────────────────────────────────────────────────────────────────
+  CASE ID FORMAT
+    AAB-CASE-[YEAR]-[CATEGORY]-[NUMBER]
+    Category codes: LL (Lifelong Learning), ED (Higher Ed), K12, LIB, etc.
+    Example: AAB-CASE-2026-ED-001
+  ──────────────────────────────────────────────────────────────────────────────
+  AFTER FILLING IN:
+  - Add a link in index.html under the correct section
+  - Open a Pull Request and tag the professor for:
+      Case ID, specific date, original author name(s), and final URL
+  - Do not publish until Case ID and author are confirmed
+  ──────────────────────────────────────────────────────────────────────────────
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AAB Case Registry — AAB-CASE-2026-ED-XXX</title>
-  <meta name="description" content="AAB Case Registry entry AAB-CASE-2026-ED-XXX — 13-week quasi-experimental study investigating the impact of a curriculum-aligned generative AI chatbot (ArtChat) on self-regulated learning among digital media art students at an art university in eastern China." />
+  <title>AAB Case Registry — {{CASE-ID}}</title>
+  <meta name="description" content="AAB Case Registry entry {{CASE-ID}} — {{ONE-SENTENCE DESCRIPTION OF THE CASE}}." />
   <link rel="icon" href="../../favicon.png" type="image/png" />
-
-  <!-- External stylesheet -->
   <link rel="stylesheet" href="../AAB-CASE-2025-LL-001.css" />
 </head>
 
@@ -41,15 +61,18 @@
         <div class="caseTitle">
           <div class="kicker">
             <span class="badge"><strong>Case Type</strong> Case Report</span>
-            <span class="badge"><strong>Status</strong> Completed</span>
+            <!-- Status options: Completed | Ongoing | Planned -->
+            <span class="badge"><strong>Status</strong> {{STATUS}}</span>
+            <!-- Author: original researcher/author of the study — confirm with professor -->
+            <span class="badge"><strong>Author</strong> {{AUTHOR LAST, FIRST or TBD}}</span>
+            <!-- Editor: person who prepared the registry entry -->
+            <span class="badge"><strong>Editor</strong> {{EDITOR LAST, FIRST}}</span>
           </div>
 
-          <h2 class="caseId" id="caseId">AAB-CASE-2026-ED-XXX</h2>
+          <h2 class="caseId" id="caseId">{{CASE-ID}}</h2>
 
           <p class="summary">
-            Informal case report of a 13-week quasi-experimental study investigating the impact of a
-            curriculum-aligned generative AI chatbot (ArtChat) on self-regulated learning and engagement
-            among digital media art students at an art university in eastern China.
+            {{2-3 sentence summary of the activity: what was done, who was involved, where, and the primary focus.}}
           </p>
 
           <div class="note" role="note">
@@ -62,34 +85,25 @@
           <div class="metaGrid">
             <div class="metaItem">
               <div class="label">Organization Type</div>
-              <div class="value">Higher Education (Art University)</div>
+              <div class="value">{{e.g. Afterschool center / Higher Education / K-12 School / Public Library}}</div>
             </div>
             <div class="metaItem">
               <div class="label">Location</div>
-              <div class="value">Eastern China / Macao</div>
+              <div class="value">{{City, State/Region, Country}}</div>
             </div>
             <div class="metaItem">
               <div class="label">Setting</div>
-              <div class="value">Formal classroom-based learning</div>
+              <div class="value">{{e.g. Formal classroom-based learning / Informal afterschool / Online}}</div>
             </div>
             <div class="metaItem">
               <div class="label">Session Format</div>
-              <div class="value">13 weeks • 90 min/week</div>
+              <div class="value">{{e.g. 5-day camp / 13 weeks • 90 min/week / Single session}}</div>
             </div>
           </div>
         </aside>
       </div>
 
       <div class="divider" role="separator" aria-hidden="true"></div>
-
-      <div class="tags" aria-label="AAB classification tags">
-        <span class="tag"><span class="k">Age</span>Higher Ed (19–23)</span>
-        <span class="tag"><span class="k">Setting</span>University</span>
-        <span class="tag"><span class="k">AI Function</span>RAG Chatbot / Conversational AI</span>
-        <span class="tag"><span class="k">Pedagogy</span>Self-Regulated Learning</span>
-        <span class="tag"><span class="k">Risk Level</span>Low</span>
-        <span class="tag"><span class="k">Data Sensitivity</span>Anonymized</span>
-      </div>
     </section>
 
     <main class="content" aria-label="Case registry content">
@@ -103,20 +117,24 @@
         <div class="cardBody">
           <div class="kv">
             <div class="k">Organization Type</div>
-            <div class="v">Higher Education (Art University)</div>
+            <div class="v">{{Organization type}}</div>
           </div>
           <div class="kv">
             <div class="k">Organizations</div>
             <div class="v">
               <ul class="bullets">
-                <li>Faculty of Applied Sciences, Macao Polytechnic University</li>
-                <li>Art and Design School, Anhui Broadcasting Movie and Television College</li>
+                <li>{{Primary organization name}}</li>
+                <!-- Add more <li> items if multiple orgs are involved -->
               </ul>
             </div>
           </div>
           <div class="kv">
             <div class="k">Location</div>
-            <div class="v">Eastern China (art university setting)</div>
+            <div class="v">{{City, State/Region, Country}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">Primary Facilitator Role</div>
+            <div class="v">{{e.g. Instructor / Graduate students / Trained educators}}</div>
           </div>
         </div>
       </section>
@@ -131,38 +149,40 @@
           <div class="kv">
             <div class="k">Setting Type</div>
             <div class="v">
+              <!-- Check all that apply: change class="box" to class="box checked" -->
               <ul class="checks" aria-label="Setting type checkboxes">
                 <li class="check"><span class="box" aria-hidden="true"></span>Informal learning</li>
                 <li class="check"><span class="box" aria-hidden="true"></span>Afterschool center</li>
-                <li class="check"><span class="box checked" aria-hidden="true"></span>In-class (Higher Ed)</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>In-school (K–12)</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>In-class (Higher Ed)</li>
                 <li class="check"><span class="box" aria-hidden="true"></span>Private program</li>
+                <li class="check"><span class="box" aria-hidden="true"></span>Public library</li>
               </ul>
             </div>
           </div>
-
           <div class="kv">
             <div class="k">Session Format</div>
-            <div class="v">13-week quasi-experimental study</div>
+            <div class="v">{{e.g. Summer camp / Semester course / Workshop}}</div>
           </div>
-
           <div class="kv">
             <div class="k">Duration</div>
-            <div class="v">Weekly 90-minute sessions over 13 weeks</div>
+            <div class="v">{{e.g. 5 days / 13 weeks • 90 min/week / 2-hour single session}}</div>
           </div>
-
+          <div class="kv">
+            <div class="k">Group Size</div>
+            <div class="v">{{Approximate number of learners}}</div>
+          </div>
           <div class="kv">
             <div class="k">Devices</div>
-            <div class="v">Personal mobile devices or lab computers (web interface)</div>
+            <div class="v">{{e.g. Individual device / Shared lab computers / Personal mobile devices}}</div>
           </div>
-
           <div class="kv">
             <div class="k">Constraints</div>
             <div class="v">
               <ul class="bullets">
-                <li>No individual logins required beyond university authentication</li>
-                <li>No personal data collected outside study parameters</li>
-                <li>Classroom-based setting with instructor supervision</li>
-                <li>Fixed class schedule (weekly 90-minute sessions)</li>
+                <li>{{Constraint 1 — e.g. No individual logins allowed}}</li>
+                <li>{{Constraint 2 — e.g. No personal data collection}}</li>
+                <!-- Add or remove items as needed -->
               </ul>
             </div>
           </div>
@@ -178,19 +198,19 @@
         <div class="cardBody">
           <div class="kv">
             <div class="k">Age Range</div>
-            <div class="v">Approx. 19–23 years (undergraduate students)</div>
+            <div class="v">{{e.g. Approx. ages 5–7 / Undergraduate students (19–23)}}</div>
           </div>
           <div class="kv">
             <div class="k">Program</div>
-            <div class="v">Digital Media Art</div>
+            <div class="v">{{e.g. Digital Media Art / General K-12 / N/A}}</div>
           </div>
           <div class="kv">
             <div class="k">Prior AI Exposure (Assumed)</div>
-            <div class="v">No prior experience with generative AI tools assumed</div>
+            <div class="v">{{e.g. No prior experience with generative AI tools assumed / Some exposure assumed}}</div>
           </div>
           <div class="kv">
-            <div class="k">Prior Programming Background (Assumed)</div>
-            <div class="v">None assumed</div>
+            <div class="k">Prior Programming Background</div>
+            <div class="v">{{e.g. None assumed / Basic coding background assumed}}</div>
           </div>
         </div>
       </section>
@@ -206,30 +226,26 @@
             <div class="k">Primary Learning Goals</div>
             <div class="v">
               <ul class="bullets">
-                <li>Mastery of introductory digital media art concepts</li>
-                <li>Development of self-regulated learning skills (planning, monitoring, reflection)</li>
+                <li>{{Primary goal 1}}</li>
+                <li>{{Primary goal 2}}</li>
               </ul>
             </div>
           </div>
-
           <div class="kv">
             <div class="k">Secondary Learning Goals</div>
             <div class="v">
               <ul class="bullets">
-                <li>Awareness of AI as a learning support tool</li>
-                <li>Ability to critically evaluate AI-generated responses</li>
-                <li>Improved learning attitudes and technology acceptance</li>
+                <li>{{Secondary goal 1}}</li>
+                <li>{{Secondary goal 2}}</li>
               </ul>
             </div>
           </div>
-
           <div class="kv">
             <div class="k">What This Was Not</div>
             <div class="v">
               <ul class="bullets">
-                <li>Not a programming lesson</li>
-                <li>Not an AI theory lesson</li>
-                <li>Not an assessment-driven activity</li>
+                <li>{{e.g. Not a programming lesson}}</li>
+                <li>{{e.g. Not an AI theory lesson}}</li>
               </ul>
             </div>
           </div>
@@ -245,47 +261,34 @@
         <div class="cardBody">
           <div class="kv">
             <div class="k">Tool Name</div>
-            <div class="v">ArtChat</div>
+            <div class="v">{{Tool name or "Undisclosed"}}</div>
           </div>
-
           <div class="kv">
             <div class="k">Tool Type</div>
-            <div class="v">Curriculum-aligned generative AI chatbot</div>
+            <div class="v">{{e.g. Generative AI storytelling app / RAG chatbot / Text-to-image tool}}</div>
           </div>
-
           <div class="kv">
             <div class="k">AI Role</div>
-            <div class="v">
-              <ul class="checks" aria-label="AI role checkboxes">
-                <li class="check"><span class="box" aria-hidden="true"></span>Co-creator</li>
-                <li class="check"><span class="box checked" aria-hidden="true"></span>Tutor / Learning assistant</li>
-                <li class="check"><span class="box" aria-hidden="true"></span>Evaluator</li>
-                <li class="check"><span class="box" aria-hidden="true"></span>Automation tool</li>
-              </ul>
-            </div>
+            <!-- Write a sentence describing how the AI functions in this context -->
+            <div class="v">{{Describe the AI's role in plain text — e.g. "X functions as an interactive learning assistant that..."}}</div>
           </div>
-
           <div class="kv">
             <div class="k">User Interaction Model</div>
             <div class="v">
-              <ul class="bullets">
-                <li>Students log into ArtChat via web interface</li>
-                <li>Students type text-based questions related to course content</li>
-                <li>ArtChat retrieves relevant information using RAG and knowledge graphs from uploaded course materials</li>
-                <li>Students receive structured, citation-backed answers</li>
-                <li>Students may ask follow-up questions or request clarification</li>
-              </ul>
+              <!-- Numbered steps showing how learners interact with the tool -->
+              <ol class="bullets">
+                <li>{{Step 1 of how learners interact with the tool}}</li>
+                <li>{{Step 2}}</li>
+                <li>{{Step 3}}</li>
+              </ol>
             </div>
           </div>
-
           <div class="kv">
             <div class="k">Safeguards</div>
             <div class="v">
               <ul class="bullets">
-                <li>Knowledge base restricted to instructor-uploaded course materials</li>
-                <li>No access to external or unfiltered internet content</li>
-                <li>Content moderation via AI model alignment</li>
-                <li>Instructor oversight during class sessions</li>
+                <li>{{Safeguard 1 — e.g. No free-form open chat}}</li>
+                <li>{{Safeguard 2 — e.g. Content moderation enabled}}</li>
               </ul>
             </div>
           </div>
@@ -302,32 +305,20 @@
           <div class="kv">
             <div class="k">Activity Flow</div>
             <div class="v">
-              <ul class="bullets">
-                <li>Instructor introduces weekly topic</li>
-                <li>Students engage with ArtChat during or after class for self-directed learning</li>
-                <li>Students reflect on responses and integrate them into understanding</li>
-                <li>Instructor facilitates discussion and addresses common questions</li>
-              </ul>
+              <!-- Numbered steps showing the sequence of the activity -->
+              <ol class="bullets">
+                <li>{{Step 1}}</li>
+                <li>{{Step 2}}</li>
+                <li>{{Step 3}}</li>
+              </ol>
             </div>
           </div>
-
-          <div class="kv">
-            <div class="k">Human vs AI Responsibilities</div>
-            <div class="v">
-              <ul class="bullets">
-                <li><strong>Human:</strong> question formulation, critical evaluation, reflection, discussion</li>
-                <li><strong>AI:</strong> information retrieval, contextual explanation, draft generation</li>
-              </ul>
-            </div>
-          </div>
-
           <div class="kv">
             <div class="k">Scaffolding Strategies</div>
             <div class="v">
               <ul class="bullets">
-                <li>Instructor guidance on effective prompting</li>
-                <li>Reflection prompts embedded in study design</li>
-                <li>Peer discussion and instructor-led synthesis</li>
+                <li>{{e.g. Prompt cards with examples}}</li>
+                <li>{{e.g. Educator-led reflection questions}}</li>
               </ul>
             </div>
           </div>
@@ -335,96 +326,92 @@
       </section>
 
       <!-- 7 -->
-      <section class="card" aria-label="Observed challenges">
+      <section class="card" aria-label="Human vs AI responsibilities">
         <div class="cardHeader">
-          <h2>Observed Challenges (Facilitator-Reported)</h2>
+          <h2>Human vs AI Responsibilities</h2>
           <div class="num">7</div>
         </div>
         <div class="cardBody">
-          <ul class="bullets">
-            <li>Some students initially over-relied on AI without critical evaluation</li>
-            <li>Vague or poorly structured queries led to less useful responses</li>
-            <li>Time constraints limited deeper exploration in some sessions</li>
-            <li>General LLM group occasionally received off-topic or inaccurate information</li>
-          </ul>
+          <div class="kv">
+            <div class="k">Human</div>
+            <div class="v">{{What the learner/facilitator is responsible for — e.g. question formulation, critical evaluation, reflection}}</div>
+          </div>
+          <div class="kv">
+            <div class="k">AI</div>
+            <div class="v">{{What the AI does — e.g. information retrieval, contextual explanation, draft generation}}</div>
+          </div>
         </div>
       </section>
 
       <!-- 8 -->
-      <section class="card" aria-label="Design adaptations made">
+      <section class="card" aria-label="Observed challenges">
         <div class="cardHeader">
-          <h2>Design Adaptations Made</h2>
+          <h2>Observed Challenges</h2>
           <div class="num">8</div>
         </div>
         <div class="cardBody">
           <ul class="bullets">
-            <li>Added in-class orientation on effective questioning strategies</li>
-            <li>Reinforced "AI as a learning partner, not an answer machine" framing</li>
-            <li>Encouraged students to compare AI responses with course materials</li>
-            <li>Integrated reflection activities into post-class assignments</li>
+            <li>{{Challenge 1}}</li>
+            <li>{{Challenge 2}}</li>
+            <!-- Add or remove items as needed -->
           </ul>
         </div>
       </section>
 
       <!-- 9 -->
+      <section class="card" aria-label="Design adaptations made">
+        <div class="cardHeader">
+          <h2>Design Adaptations Made</h2>
+          <div class="num">9</div>
+        </div>
+        <div class="cardBody">
+          <ul class="bullets">
+            <li>{{Adaptation 1 — what was changed and why}}</li>
+            <li>{{Adaptation 2}}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 10 -->
       <section class="card" aria-label="Reported outcomes">
         <div class="cardHeader">
           <h2>Reported Outcomes</h2>
-          <div class="num">9</div>
+          <div class="num">10</div>
         </div>
         <div class="cardBody">
           <div class="kv">
             <div class="k">Engagement</div>
-            <div class="v">High participation; ArtChat group demonstrated sustained interaction with the tool and increased voluntary engagement with course content</div>
+            <div class="v">{{Description of learner engagement levels}}</div>
           </div>
           <div class="kv">
             <div class="k">Learning Signals (Qualitative)</div>
             <div class="v">
               <ul class="bullets">
-                <li>Students revised their understanding based on AI feedback</li>
-                <li>Some questioned or challenged AI responses, prompting deeper inquiry</li>
-                <li>Peer discussions about AI-generated content increased</li>
-                <li>Students reported feeling more in control of their learning process</li>
+                <li>{{Observation 1}}</li>
+                <li>{{Observation 2}}</li>
               </ul>
             </div>
           </div>
           <div class="kv">
             <div class="k">Facilitator Reflection</div>
-            <div class="v muted">"ArtChat didn't just give answers—it gave students a reason to ask better questions. The most meaningful learning happened when they reflected on why the AI responded the way it did."</div>
+            <!-- Use class="v muted" for direct quotes. Remove this row if no quote available. -->
+            <div class="v muted">"{{Direct quote from facilitator}}"</div>
           </div>
         </div>
       </section>
 
-      <!-- 10 -->
+      <!-- 11 -->
       <section class="card" aria-label="Ethical and privacy considerations">
         <div class="cardHeader">
           <h2>Ethical &amp; Privacy Considerations</h2>
-          <div class="num">10</div>
-        </div>
-        <div class="cardBody">
-          <ul class="bullets">
-            <li>No personal data collected beyond basic demographic information for research purposes</li>
-            <li>All student data anonymized in analysis and reporting</li>
-            <li>Informed consent obtained from all participants</li>
-            <li>Study approved by institutional ethics review</li>
-            <li>Tool usage aligned with university IT policies</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 11 -->
-      <section class="card" aria-label="Evidence type">
-        <div class="cardHeader">
-          <h2>Evidence Type</h2>
           <div class="num">11</div>
         </div>
         <div class="cardBody">
-          <ul class="checks" aria-label="Evidence type checkboxes">
-            <li class="check"><span class="box checked" aria-hidden="true"></span>Practitioner observation</li>
-            <li class="check"><span class="box checked" aria-hidden="true"></span>Activity documentation</li>
-            <li class="check"><span class="box checked" aria-hidden="true"></span>Pre/post assessment</li>
-            <li class="check"><span class="box checked" aria-hidden="true"></span>Learning analytics</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Student artifacts retained</li>
+          <ul class="bullets">
+            <li>{{e.g. No personal data collected}}</li>
+            <li>{{e.g. All student data anonymized}}</li>
+            <li>{{e.g. Informed consent obtained}}</li>
+            <!-- Add or remove items as needed -->
           </ul>
         </div>
       </section>
@@ -440,9 +427,8 @@
             <div class="k">Potential Research Use</div>
             <div class="v">
               <ul class="bullets">
-                <li>Empirical validation of AI tools in higher education</li>
-                <li>Self-regulated learning and AI interaction studies</li>
-                <li>Cross-disciplinary AI applications (AI + education + arts)</li>
+                <li>{{e.g. Design-based research}}</li>
+                <li>{{e.g. AI literacy studies}}</li>
               </ul>
             </div>
           </div>
@@ -453,8 +439,7 @@
                 <li>Learning sciences</li>
                 <li>Educational technology</li>
                 <li>AI literacy</li>
-                <li>Art education</li>
-                <li>Human-AI collaboration</li>
+                <li>{{Add domain if applicable}}</li>
               </ul>
             </div>
           </div>
@@ -462,61 +447,42 @@
       </section>
 
       <!-- 13 -->
-      <section class="card" aria-label="Case status">
+      <section class="card" aria-label="Contributors">
         <div class="cardHeader">
-          <h2>Case Status</h2>
+          <h2>Contributors</h2>
           <div class="num">13</div>
         </div>
         <div class="cardBody">
-          <ul class="checks" aria-label="Case status checkboxes">
-            <li class="check"><span class="box checked" aria-hidden="true"></span>Completed</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Planned expansion</li>
-            <li class="check"><span class="box" aria-hidden="true"></span>Scaling across sites</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 14 -->
-      <section class="card" aria-label="AAB classification tags">
-        <div class="cardHeader">
-          <h2>AAB Classification Tags</h2>
-          <div class="num">14</div>
-        </div>
-        <div class="cardBody">
           <div class="kv">
-            <div class="k">Age</div>
-            <div class="v">Higher Ed (19–23)</div>
+            <div class="k">Author</div>
+            <!-- Original researcher or study author — confirm with professor -->
+            <div class="v">{{Last, First — Institution}}</div>
           </div>
           <div class="kv">
-            <div class="k">Setting</div>
-            <div class="v">University</div>
-          </div>
-          <div class="kv">
-            <div class="k">AI Function</div>
-            <div class="v">RAG Chatbot / Conversational AI</div>
-          </div>
-          <div class="kv">
-            <div class="k">Pedagogy</div>
-            <div class="v">Self-Regulated Learning</div>
-          </div>
-          <div class="kv">
-            <div class="k">Risk Level</div>
-            <div class="v">Low</div>
-          </div>
-          <div class="kv">
-            <div class="k">Data Sensitivity</div>
-            <div class="v">Anonymized</div>
+            <div class="k">Editor</div>
+            <!-- Person who prepared the registry entry -->
+            <div class="v">{{Last, First — Role, Institution}}</div>
           </div>
         </div>
       </section>
 
     </main>
 
+    <!-- AAB Classification Tags — for future search/filter functionality -->
+    <div class="tags" aria-label="AAB classification tags" style="padding: 0 var(--pad) 32px;">
+      <span class="tag"><span class="k">Age</span>{{e.g. Elementary (5–7) / Higher Ed (19–23) / Mixed}}</span>
+      <span class="tag"><span class="k">Setting</span>{{e.g. Afterschool center / University / Public library}}</span>
+      <span class="tag"><span class="k">AI Function</span>{{e.g. RAG Chatbot / Generative Text/Image/Voice / Automation}}</span>
+      <span class="tag"><span class="k">Pedagogy</span>{{e.g. Self-Regulated Learning / Non-collab + collab / Project-based}}</span>
+      <span class="tag"><span class="k">Risk Level</span>{{Low / Medium / High}}</span>
+      <span class="tag"><span class="k">Data Sensitivity</span>{{None / Anonymized / Identified}}</span>
+    </div>
+
     <footer aria-label="Page footer">
       <div class="left">
         <span class="pill">Registry: Case</span>
-        <span class="pill">ID: <span style="font-family:var(--mono);">AAB-CASE-2026-ED-XXX</span></span>
-        <span class="pill">Case Date: 2026</span>
+        <span class="pill">ID: <span style="font-family:var(--mono);">{{CASE-ID}}</span></span>
+        <span class="pill">Case Date: {{Date or date range of the activity}}</span>
       </div>
       <div>
         <span class="pill">AAB • Case Registry</span>
@@ -525,6 +491,7 @@
 
   </div>
 
+  <!-- Citation Modal -->
   <div id="citeModal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="citeTitle">
     <div class="modal-overlay" onclick="closeCiteModal()"></div>
     <div class="modal-panel">
@@ -534,8 +501,13 @@
           Close
         </button>
       </div>
+      <!--
+        Citation format:
+        Last, First; Last, First. CASE-ID. AI Assessment Board (AAB) Case Registry. Published YEAR. URL (accessed YYYY-MM-DD).
+        List the original author first, then the editor.
+      -->
       <p id="citationText" class="citation">
-        Faculty of Applied Sciences, Macao Polytechnic University; Art and Design School, Anhui Broadcasting Movie and Television College. AAB-CASE-2026-ED-XXX. AI Assessment Board (AAB) Case Registry. Published 2026. URL (accessed 2026)
+        {{Last, First (Author); Last, First (Editor)}}. {{CASE-ID}}. AI Assessment Board (AAB) Case Registry. Published {{YEAR}}. {{URL}} (accessed {{YYYY-MM-DD}}). Registry entry prepared by {{Editor Last, First}} ({{Role, Institution}}).
       </p>
       <div class="modal-actions">
         <button class="btn primary" type="button" onclick="copyCitation()">Copy Citation</button>
