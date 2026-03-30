@@ -291,10 +291,11 @@
     <nav class="nav">
       <a href="#about">About</a>
       <a href="aab-launch-announcement.html">News</a>
-      <a href="#Team">Team</a>
+      <a href="Team.html">Team</a>
       <a href="#structure">Structure</a>
       <a href="#support">Letter of Support</a>
       <a href="#sign">Sign</a>
+      <a href="aab_support_page.html">Support</a>
     </nav>
   </div>
 </header>
@@ -598,16 +599,13 @@ Regional Liaisons / Pilots</div>
 </footer>
 
   <script>
-    // ==========================================
-    // AAB Data Rendering Setup (Global & Advisory)
-    // ==========================================
+    // ============================================================
+    // AAB LIVE DATA RENDERER (Google Sheets Integration)
+    // ============================================================
     
-    // Points to the local CSV file in the root of your GitHub Pages project
-    const SUPPORTERS_CSV_URL = "./supporters.csv";
+    // Your Live Google Sheets CSV Link
+    const SUPPORTERS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7zj1RrzepWUNX95kgEo2eO5no8FzZgZxFH0oAbmFTf1dau7ok_i0efZTyccLE3_GzVpoh8a2pm1iu/pub?output=csv";
 
-    /**
-     * Helper to parse CSV rows with quotes/commas
-     */
     function parseCSVRow(row) {
       const result = [];
       let current = "";
@@ -627,9 +625,6 @@ Regional Liaisons / Pilots</div>
       return result;
     }
 
-    /**
-     * Helper to map CSV text to Objects
-     */
     function parseCSV(text) {
       const rows = text.split(/\r?\n/).filter(Boolean);
       if (!rows.length) return [];
@@ -644,18 +639,13 @@ Regional Liaisons / Pilots</div>
       });
     }
 
-    /**
-     * Logic to handle the full-sentence radio button responses
-     */
     function isYes(value) {
       if (!value) return false;
       const v = value.toLowerCase().trim();
+      // Logic: Handles the long "Yes, I agree..." sentences from Google Forms
       return v.startsWith("yes"); 
     }
 
-    /**
-     * Function 1: Render General Supporters
-     */
     function renderSupporters(entries) {
       const list = document.getElementById("supporters-list");
       const status = document.getElementById("supporters-status");
@@ -671,7 +661,7 @@ Regional Liaisons / Pilots</div>
         return;
       }
 
-      status.textContent = `${publicEntries.length} supporter${publicEntries.length > 1 ? "s" : ""} listed.`;
+      status.textContent = `${publicEntries.length} global supporter${publicEntries.length > 1 ? "s" : ""} listed.`;
       
       list.innerHTML = publicEntries.map(entry => `
         <div class="mini-card">
@@ -683,15 +673,10 @@ Regional Liaisons / Pilots</div>
       `).join("");
     }
 
-    /**
-     * Function 2: Render Academic Advisory Board
-     */
     function renderAdvisoryBoard(entries) {
       const list = document.getElementById("advisory-list");
       const status = document.getElementById("advisory-status");
 
-      // ## new logic
-      // Filters specifically for the Advisory Board consent column
       const advisoryEntries = entries.filter(entry => {
         const advisoryConsent = entry["I agree that my name, title, and institution may be displayed publicly on the AAB website as a member of the Academic Advisory Board."] || "";
         return entry["Name"] && isYes(advisoryConsent);
@@ -715,28 +700,29 @@ Regional Liaisons / Pilots</div>
       `).join("");
     }
 
-    /**
-     * Main Loader
-     */
-    async function loadAllAABData() {
+    async function loadLiveAABData() {
       try {
-        const response = await fetch(SUPPORTERS_CSV_URL, { cache: "no-store" });
-        if (!response.ok) throw new Error("CSV file not found.");
+        // Append a timestamp to prevent browser caching of old data
+        const liveUrl = `${SUPPORTERS_CSV_URL}&t=${new Date().getTime()}`;
+        
+        const response = await fetch(liveUrl);
+        if (!response.ok) throw new Error("Network response was not ok");
         
         const csvText = await response.text();
         const entries = parseCSV(csvText);
 
-        // Run both validation logics on the data
         renderSupporters(entries);
         renderAdvisoryBoard(entries);
 
       } catch (error) {
-        console.error("AAB Data Error:", error);
+        console.error("Live Data Error:", error);
+        const sStatus = document.getElementById("supporters-status");
+        if(sStatus) sStatus.textContent = "Unable to load the live list. Please check back shortly.";
       }
     }
 
-    // Initialize
-    loadAllAABData();
+    // Run the initializer
+    loadLiveAABData();
 </script>
   
   
